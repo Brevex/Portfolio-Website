@@ -1,0 +1,35 @@
+::-webkit-scrollbar {
+    width: 8px; 
+    height: 12px; 
+}
+
+::-webkit-scrollbar-track {
+    background: #070707; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5b9f07; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #437605; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    transition: all 0.2s ease-in-out;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    max-width: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000000;
+}

@@ -1,0 +1,15 @@
+<nav class="navbar" [ngClass]="{ 'navbar-scrolled': isScrolled }">
+  <div class="container">
+    <div class="navbar-brand">
+      <a href="#"> [B] </a>
+    </div>
+    <button class="navbar-toggler" [ngClass]="{'active': menuOpen}" (click)="toggleMenu()">
+      <span class="toggler-icon"></span>
+    </button>
+    <div class="navbar-links" [ngClass]="{ 'navbar-links-active': menuOpen }">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,49 @@
+<section id="projects" class="projects-section">
+    <h2 class="projects-title" [class.mobile-title]="isMobile"> >> Projects << </h2>
+    
+    <div class="carousel-wrapper" [@slideAnimation]="currentIndex">
+        <div class="window-bar">
+            <div class="window-button"></div>
+            <div class="window-button"></div>
+            <div class="window-button"></div>
+        </div>
+        
+        <div class="carousel-content" [class.mobile-layout]="isMobile">
+            <div class="project-info">
+                <h3 class="project-title">{{projects[currentIndex].name}}</h3>
+                
+                <div class="skills-icons">
+                    <i *ngFor="let tech of projects[currentIndex].technologies" 
+                       [class]="getTechnologyIcon(tech)"
+                       [attr.title]="tech"></i>
+                </div>
+                
+                <p class="project-description">
+                    {{projects[currentIndex].description}}
+                </p>
+                
+                <button class="github-button" 
+                        (click)="openGithub(projects[currentIndex].githubUrl)">
+                    View on GitHub
+                </button>
+            </div>
+    
+            <div class="project-image" 
+                [style.backgroundImage]="'url(' + projects[currentIndex].image + ')'">
+            </div>
+        </div>
+    
+        <div class="carousel-controls">
+            <button class="control-button prev" 
+                    (click)="previous()" 
+                    aria-label="Previous project">
+                &#8592;
+            </button>
+            <button class="control-button next" 
+                    (click)="next()" 
+                    aria-label="Next project">
+                &#8594;
+            </button>
+        </div>
+    </div>
+</section>

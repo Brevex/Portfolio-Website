@@ -1,0 +1,39 @@
+<section class="contact" id="contact">
+  <h2 class="contact-title">
+    <span class="contact-title-arrow" aria-hidden="true">&gt;&gt;</span>
+    Contact
+    <span class="contact-title-arrow" aria-hidden="true">&lt;&lt;</span>
+  </h2>
+  
+  <div class="contact-content">
+    <div class="window-bar">
+      <div class="window-button" role="presentation"></div>
+      <div class="window-button" role="presentation"></div>
+      <div class="window-button" role="presentation"></div>
+    </div>
+    
+    <div class="contact-map">
+      <iframe 
+        [src]="mapUrl | safeResourceUrl"
+        title="Location map"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        class="contact-map-iframe"
+        [attr.aria-label]="'Interactive map showing ' + locationName"
+      ></iframe>
+    </div>
+    
+    <div class="contact-buttons">
+      <button 
+        *ngFor="let network of socialNetworks; trackBy: trackByName"
+        type="button"
+        class="network-button"
+        [attr.aria-label]="'Visit ' + network.name"
+        (click)="navigateTo(network.url)"
+      >
+        <i [class]="network.icon" aria-hidden="true"></i>
+        <span class="network-button-text">{{ network.name }}</span>
+      </button>
+    </div>
+  </div>
+</section>
