@@ -1,6 +1,5 @@
-<section id="projects" class="projects-section">
-    <h2 class="projects-title" [class.mobile-title]="isMobile"> >> Projects << </h2>
-    
+<section id="projects">
+    <h2 class="section-title">&gt;&gt; Projects &lt;&lt;</h2>
     <div class="carousel-wrapper" [@slideAnimation]="currentIndex">
         <div class="window-bar">
             <div class="window-button"></div>
@@ -22,8 +21,8 @@
                     {{projects[currentIndex].description}}
                 </p>
                 
-                <button class="github-button" 
-                        (click)="openGithub(projects[currentIndex].githubUrl)">
+                <button class="github-button default-button" (click)="openGithub(projects[currentIndex].githubUrl)">
+                    <i class="devicon-github-plain"></i>
                     View on GitHub
                 </button>
             </div>

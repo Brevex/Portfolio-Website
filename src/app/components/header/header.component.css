@@ -34,24 +34,6 @@
     padding: 1rem;
 }
 
-.window-bar {
-    border-radius: 16px 16px 0 0;
-    background-color: #1b1b1b;
-    width: 100%;
-    height: clamp(25px, 5vh, 38px);
-    display: flex;
-    gap: clamp(0.5rem, 2vw, 1rem);
-    align-items: center;
-    padding-left: clamp(0.5rem, 2vw, 1rem);
-}
-
-.window-button {
-    width: clamp(12px, 2vw, 20px);
-    height: clamp(12px, 2vw, 20px);
-    border-radius: 100%;
-    background-color: #9c9c9c;
-}
-
 .container {
     background: 
         repeating-linear-gradient(

@@ -1,10 +1,5 @@
-<section class="contact" id="contact">
-  <h2 class="contact-title">
-    <span class="contact-title-arrow" aria-hidden="true">&gt;&gt;</span>
-    Contact
-    <span class="contact-title-arrow" aria-hidden="true">&lt;&lt;</span>
-  </h2>
-  
+<section id="contact">
+  <h2 class="section-title">&gt;&gt; Contact &lt;&lt;</h2>
   <div class="contact-content">
     <div class="window-bar">
       <div class="window-button" role="presentation"></div>
@@ -27,7 +22,7 @@
       <button 
         *ngFor="let network of socialNetworks; trackBy: trackByName"
         type="button"
-        class="network-button"
+        class="network-button default-button"
         [attr.aria-label]="'Visit ' + network.name"
         (click)="navigateTo(network.url)"
       >

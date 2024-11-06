@@ -33,3 +33,60 @@ html {
 body {
     background-color: #000000;
 }
+
+section {
+    background-color: #1b1b1b;
+    font-family: "VT323", monospace;
+    color: #5b9f07;
+    padding: clamp(1rem, 5vw, 2rem);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: clamp(1rem, 3vw, 2rem);
+    line-height: 1.2;
+}
+
+.window-bar {
+    background-color: #333;
+    padding: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.window-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #5b9f07;
+}
+
+.default-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.8rem 1.2rem;
+    background-color: #333;
+    border: 2px solid #5b9f07;
+    border-radius: 4px;
+    color: #5b9f07;
+    font-family: inherit;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.default-button:hover, 
+.default-button:focus {
+    background-color: #5b9f07;
+    color: #1b1b1b;
+    outline: none;
+    transform: translateY(-2px);
+}
+
+.default-button i {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+}
