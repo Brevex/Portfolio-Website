@@ -20,6 +20,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(21.8rem, 1fr));
     gap: 1.5rem;
+    align-items: start; 
 }
 
 .job {

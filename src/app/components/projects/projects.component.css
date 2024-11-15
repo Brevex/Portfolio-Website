@@ -32,13 +32,19 @@
     flex-wrap: wrap;
 }
 
-.skills-icons i {
-    font-size: 2rem;
-    transition: transform 0.3s ease;
-}
+.skills-icons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
 
-.skills-icons i:hover {
-    transform: scale(1.1);
+    i {
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: #8bc34a;
+        }
+    }
 }
 
 .project-description {
@@ -99,6 +105,33 @@
     }
 }
 
+.carousel-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.carousel-dots {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #404040;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: #5b9f07;
+    transform: scale(1.2);
+}
+
 @media (max-width: 768px) {
     .carousel-content.mobile-layout {
         grid-template-columns: 1fr;
@@ -130,6 +163,15 @@
     .control-button {
         padding: 0.4rem 0.8rem;
         font-size: 1rem;
+    }
+
+    .carousel-footer {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
     }
 }
 

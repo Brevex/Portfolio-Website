@@ -35,21 +35,21 @@ export class ProjectsComponent implements OnInit {
       name: "Smart Parking System",
       image: "assets/projects/smart-parking-system.png",
       githubUrl: "https://github.com/Brevex/Smart-Parking-System.git",
-      description: "Intelligent parking system connected to firebase and managed by a realtime web application. The system has access card reading, parking availability, alarm system and real time monitoring.",
+      description: "An intelligent parking system connected to Firebase and managed by a real-time web application. The system includes access card reading, parking availability monitoring, an alarm system, and real-time monitoring.",
       technologies: ["arduino", "java", "spring", "angular", "firebase"]
     },
     {
       name: "Pastora",
       image: "assets/projects/pastora.png",
       githubUrl: "https://github.com/talis-fb/Pastora",
-      description: "Full stack system for real-time web service status monitoring.",
+      description: "A full-stack system for real-time monitoring of web service statuses.",
       technologies: ["java", "spring", "vuejs", "postgresql"]
     },
     {
       name: "BitCrab",
       image: "assets/projects/bitcrab.png",
       githubUrl: "https://github.com/Brevex/BitCrab.git",
-      description: "CLI application for downloading files via Bittorrent protocol implemented in Rust focused on efficiency and security.",
+      description: "A CLI application for downloading files via the BitTorrent protocol, implemented in Rust, focused on efficiency and security.",
       technologies: ["rust"]
     },
   ];
@@ -89,5 +89,9 @@ export class ProjectsComponent implements OnInit {
 
   getTechnologyIcon(tech: string): string {
     return `devicon-${tech}-plain`;
+  }
+
+  goToSlide(index: number) {
+    this.currentIndex = index;
   }
 }

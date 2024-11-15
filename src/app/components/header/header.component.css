@@ -81,6 +81,23 @@
 .skills-icons i:nth-child(5) { animation-delay: 0.4s; }
 .skills-icons i:nth-child(6) { animation-delay: 0.5s; }
 
+.scroll-arrow {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    animation: bounce 2s ease infinite;
+}
+
+.scroll-arrow svg {
+    width: 40px;
+    height: 40px;
+    filter: drop-shadow(0 0 2px #5b9f07);
+}
+
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }

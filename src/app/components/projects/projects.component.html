@@ -32,12 +32,21 @@
             </div>
         </div>
     
-        <div class="carousel-controls">
+        <div class="carousel-footer">
             <button class="control-button prev" 
                     (click)="previous()" 
                     aria-label="Previous project">
                 &#8592;
             </button>
+
+            <div class="carousel-dots">
+                <span *ngFor="let project of projects; let i = index" 
+                      class="dot"
+                      [class.active]="i === currentIndex"
+                      (click)="goToSlide(i)">
+                </span>
+            </div>
+
             <button class="control-button next" 
                     (click)="next()" 
                     aria-label="Next project">
