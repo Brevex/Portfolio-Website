@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   });
 
   private readonly texts: ReadonlyArray<string> = [
-    'Full stack Developer',
+    'Software Developer',
     'Addicted to coffee'
   ];
 
