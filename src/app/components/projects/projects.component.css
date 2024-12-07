@@ -22,7 +22,7 @@
 }
 
 .project-title {
-    font-size: 2.6rem;
+    font-size: clamp(var(--h3-size-min), 5vw, var(--h3-size-max));
     margin: 0;
 }
 
@@ -38,7 +38,7 @@
     flex-wrap: wrap;
 
     i {
-        font-size: 1.5rem;
+        font-size: clamp(var(--icon-size-sm), 3vw, var(--icon-size-md));
         transition: color 0.3s ease;
 
         &:hover {
@@ -49,7 +49,7 @@
 
 .project-description {
     font-family: 'Roboto Flex';
-    font-size: 1.2rem;
+    font-size: clamp(var(--font-size-sm), 3vw, var(--font-size-lg));
     color: #a4a4a4;
     line-height: 1.5;
     margin: 0;
@@ -81,7 +81,7 @@
     border: 2px solid #5b9f07;
     color: #5b9f07;
     padding: 0.5rem 1rem;
-    font-size: 1.2rem;
+    font-size: clamp(var(--button-font-size-sm), 3vw, var(--button-font-size-md));
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -94,14 +94,6 @@
 @media (max-width: 1024px) {
     .carousel-content {
         gap: 1rem;
-    }
-
-    .project-title {
-        font-size: 1.8rem;
-    }
-
-    .skills-icons i {
-        font-size: 1.8rem;
     }
 }
 
@@ -152,17 +144,12 @@
         align-items: center;
     }
 
-    .project-description {
-        font-size: 1rem;
-    }
-
     .skills-icons {
         justify-content: center;
     }
 
     .control-button {
         padding: 0.4rem 0.8rem;
-        font-size: 1rem;
     }
 
     .carousel-footer {
@@ -176,10 +163,6 @@
 }
 
 @media (max-width: 320px) {
-    .project-title {
-        font-size: 1.5rem;
-    }
-
     .carousel-content {
         padding: 1rem;
     }

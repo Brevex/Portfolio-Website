@@ -15,6 +15,36 @@
     background: #437605; 
 }
 
+:root {
+    --font-size-base: 16px;
+    --line-height-base: 1.6;
+
+    --font-size-xs: 0.75rem;     
+    --font-size-sm: 0.875rem;     
+    --font-size-md: 1rem;         
+    --font-size-lg: 1.25rem;     
+    --font-size-xl: 1.5rem;       
+    --font-size-2xl: 1.875rem;    
+    --font-size-3xl: 2.25rem;     
+    --font-size-4xl: 3rem;        
+    --font-size-5xl: 3.75rem;     
+
+    --h1-size-min: 2rem;
+    --h1-size-max: 6rem;
+    --h2-size-min: 1.5rem;
+    --h2-size-max: 3.5rem;
+    --h3-size-min: 1.25rem;
+    --h3-size-max: 2.6rem;
+
+    --icon-size-sm: 1rem;
+    --icon-size-md: 1.5rem;
+    --icon-size-lg: 2rem;
+
+    --button-font-size-sm: 0.875rem;
+    --button-font-size-md: 1rem;
+    --button-font-size-lg: 1.125rem;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -27,7 +57,8 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
 }
 
 body {
@@ -45,7 +76,7 @@ section {
 
 .section-title {
     text-align: center;
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(var(--h2-size-min), 5vw, var(--h2-size-max));
     margin-bottom: clamp(1rem, 3vw, 2rem);
     line-height: 1.2;
 }
@@ -74,7 +105,7 @@ section {
     border-radius: 4px;
     color: #5b9f07;
     font-family: inherit;
-    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-size: clamp(var(--button-font-size-sm), 2vw, var(--button-font-size-md));
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -88,5 +119,5 @@ section {
 }
 
 .default-button i {
-    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    font-size: clamp(var(--icon-size-md), 2.5vw, var(--icon-size-lg));
 }

@@ -18,14 +18,14 @@
 }
 
 .main-header h1 {
-    font-size: clamp(2rem, 8vw, 6rem);
+    font-size: clamp(var(--h1-size-min), 8vw, var(--h1-size-max));
     font-weight: bold;
     line-height: 1.2;
     padding-top: 2rem;
 }
 
 .main-header h2 {
-    font-size: clamp(1.2rem, 4vw, 3rem);
+    font-size: clamp(var(--h2-size-min), 4vw, var(--h2-size-max));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,7 +58,7 @@
 }
 
 .skills-icons {
-    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-size: clamp(var(--icon-size-md), 5vw, var(--icon-size-lg));
     margin-top: 2rem;
     padding-bottom: 3rem;
     display: flex;
@@ -83,7 +83,7 @@
 
 .scroll-arrow {
     position: absolute;
-    bottom: 20px;
+    bottom: 6rem;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -111,7 +111,7 @@
 
 @keyframes glow {
     0% { text-shadow: 0 0 1px #5b9f07, 0 0 2px #5b9f07; }
-    50% { text-shadow: 0 0 2px #9bff31, 0 0 4px #9bff31; }
+    50% { text-shadow: 0 0 2px #9bff31, 0 0 2px #9bff31; }
     100% { text-shadow: 0 0 1px #5b9f07, 0 0 2px #5b9f07; }
 }
 
@@ -122,5 +122,11 @@
 @media (max-width: 768px) {
     .skills-icons {
         gap: 1.3rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .scroll-arrow {
+        bottom: 1rem;
     }
 }
