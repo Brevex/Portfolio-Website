@@ -1,78 +1,55 @@
 <section id="experience">
     <h2 class="section-title">&gt;&gt; Experience &lt;&lt;</h2>
-    <div class="my-experiences">
-        <div class="type-of-experience">
-            <h3>Enterprise</h3>
-            <div class="experience-section">
-                <article class="job">
-                    <div class="company">
-                        <img class="job-icon" src="assets/logos/ice.png" alt="Logo">
-                        <div class="name-time-description">
-                            <h4 class="company-name">Brain Institute</h4>
-                            <h4 class="role">AI Back-end Developer (2024 - Today)</h4>
-                            <div class="skills-icons">
-                                <i class="devicon-python-plain"></i>
-                                <i class="devicon-java-plain"></i>
-                                <i class="devicon-spring-original"></i>
-                                <i class="devicon-docker-plain"></i>
-                            </div>
+
+    <div class="experience-section">
+        <h3 class="section-subtitle">Enterprise</h3>
+        <div class="green-line"></div>
+        
+        <div class="experience-cards">
+            <div *ngFor="let exp of enterpriseExperiences" class="experience-card">
+                <div class="institution-header">
+                    <img [src]="exp.logo" [alt]="exp.institution + ' logo'" class="institution-logo">
+                    <h4 class="institution-name">{{ exp.institution }}</h4>
+                </div>
+                
+                <ul class="positions-list">
+                    <li *ngFor="let position of exp.positions" class="position-item">
+                        <p class="position-title">{{ position.title }} ({{ position.period }})</p>
+                        <details>
+                            <summary>View Details</summary>
+                            <p class="position-description">{{ position.description }}</p>
+                        </details>
+                        <div class="technology-icons">
+                            <i *ngFor="let tech of position.technologies" 
+                                [class]="getTechnologyIcon(tech)"
+                                [title]="tech"></i>
                         </div>
-                    </div>
-                    <details class="description-section">
-                        <summary>View Details</summary>
-                        <p class="description">At the Brain Institute, I researched animal behavior patterns using machine learning and 
-                        computer vision techniques with Python, and developed a model management system using Java and Spring. I 
-                        implemented MLOps strategies to streamline and automate the project life cycle, including Docker for 
-                        containerization, monitoring, retraining, and benchmarking of models, as well as model review and governance to 
-                        ensure compliance and performance. I also acted as a liaison between cross-functional teams, ensuring that 
-                        non-technical stakeholders had seamless access to AI models.
-                        </p>
-                    </details>
-                </article>
-                <article class="job">
-                    <div class="company">
-                        <img class="job-icon" src="assets/logos/eject.png" alt="Logo">
-                        <div class="name-time-description">
-                            <h4 class="company-name">EJECT</h4>
-                            <h4 class="role">Full Stack Developer (2020 - 2021)</h4>
-                            <div class="skills-icons">
-                                <i class="devicon-java-plain"></i>
-                                <i class="devicon-spring-original"></i>
-                                <i class="devicon-angular-plain"></i>
-                                <i class="devicon-postgresql-plain"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <details class="description-section">
-                        <summary>View Details</summary>
-                        <p class="description">At EJECT, I was responsible for developing and delivering customized web systems for 
-                        companies, helping them expand their businesses and automate essential processes. I developed robust web 
-                        applications using Java, Spring, and Angular, focusing on creating and integrating RESTful APIs, and efficiently 
-                        interacting with PostgreSQL databases. I worked in an agile environment, collaborating with cross-functional teams 
-                        to ensure high-quality deliveries aligned with client goals.
-                        </p>
-                    </details>
-                </article>
+                    </li>
+                </ul>
             </div>
         </div>
+    </div>
 
-        <div class="type-of-experience">
-            <h3>Academic</h3>
-            <div class="experience-section">
-                <article class="job">
-                    <div class="company">
-                        <img class="job-icon" src="assets/logos/ufrn.png" alt="Logo">
-                        <div class="name-time-description">
-                            <h4 class="company-name">Federal University of Rio Grande do Norte</h4>
-                            <h4 class="role">Bachelor's Degree in I.T (2022 - 2025)</h4>
-                            <div class="skills-icons">
-                                <i class="devicon-java-plain"></i>
-                                <i class="devicon-python-plain"></i>
-                                <i class="devicon-rust-original"></i>
-                            </div>
-                        </div>
-                    </div>
-                </article>
+    <div class="experience-section">
+        <h3 class="section-subtitle">Academic</h3>
+        <div class="green-line"></div>
+        
+        <div class="experience-cards">
+            <div *ngFor="let exp of academicExperiences" class="experience-card">
+                <div class="institution-header">
+                    <img [src]="exp.logo" [alt]="exp.institution + ' logo'" class="institution-logo">
+                    <h4 class="institution-name">{{ exp.institution }}</h4>
+                </div>
+                
+                <ul class="positions-list">
+                    <li *ngFor="let position of exp.positions" class="position-item">
+                        <p class="position-title">{{ position.title }} ({{ position.period }})</p>
+                        <details>
+                            <summary>View Details</summary>
+                            <p class="position-description">{{ position.description }}</p>
+                        </details>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

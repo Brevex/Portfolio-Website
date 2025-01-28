@@ -11,14 +11,13 @@ import { FooterComponent } from './components/footer/footer.component';
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet,
     NavbarComponent,
     HeaderComponent,
     ProjectsComponent,
     ExperienceComponent,
     ContactComponent,
     FooterComponent
-  ],
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

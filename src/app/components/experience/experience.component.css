@@ -1,145 +1,122 @@
-.my-experiences {
-    max-width: 75rem;
-    margin: 0 auto;
+.experience-section {
+    max-width: 77rem; 
+    margin: 0 auto; 
+    margin-bottom: 3rem;
+    padding: 0 1rem; 
+}
+
+.section-subtitle {
+    font-size: clamp(var(--h3-size-min), 4vw, var(--h3-size-max));
+    margin-bottom: 0.5rem;
+}
+
+.green-line {
+    height: 2px;
+    background-color: #5b9f07;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 5px #5b9f07;
+}
+
+.experience-cards {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-.type-of-experience {
-    h3 {
-        font-size: clamp(var(--h3-size-min), 5vw, var(--h3-size-max));
-        margin-bottom: 1.5rem;
-        border-bottom: 2px solid #5b9f07;
-        padding-bottom: 0.5rem;
-    }
-}
-
-.experience-section {
-    font-family: 'Roboto Flex';
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(21.8rem, 1fr));
-    gap: 1.5rem;
-    align-items: start; 
-}
-
-.job {
+.experience-card {
     background-color: #252525;
     border-radius: 8px;
-    padding: 1.25rem;
-    transition: transform 0.3s ease;
+    padding: 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-    &:hover {
-        transform: translateY(-2px);
-    }
 }
 
-.company {
+.institution-header {
     display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-.job-icon {
-    width: 70px;
-    height: 70px;
-    border-radius: 4px;
+.institution-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
-.name-time-description {
-    flex: 1;
+.institution-name {
+    font-size: clamp(var(--font-size-lg), 3vw, var(--font-size-xl));
+    color: #5b9f07;
 }
 
-.company-name {
-    font-family: "VT323", monospace;
-    font-size: clamp(var(--font-size-xl), 4vw, var(--font-size-2xl));
+.positions-list {
+    list-style-type: disc;
+    padding-left: 1rem;
 }
 
-.role {
-    font-size: clamp(var(--font-size-sm), 3vw, var(--font-size-lg));
-    color: #8bc34a;
+.position-item {
+    margin-bottom: 1.5rem;
+}
+
+.position-item:last-child {
+    margin-bottom: 0;
+}
+
+.position-title {
+    font-size: clamp(var(--font-size-lg), 2.5vw, var(--font-size-xl));
     margin-bottom: 0.5rem;
-    font-weight: lighter;
 }
 
-.skills-icons {
+.position-description {
+    color: #a4a4a4;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: clamp(var(--font-size-sm), 2vw, var(--font-size-md));
+    margin-bottom: 1rem;
+}
+
+details {
+    cursor: pointer;
+    font-size: clamp(var(--font-size-md), 2.5vw, var(--font-size-lg));
+}
+
+.technology-icons {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-
-    i {
-        font-size: clamp(var(--icon-size-sm), 3vw, var(--icon-size-md));
-        transition: color 0.3s ease;
-
-        &:hover {
-            color: #8bc34a;
-        }
-    }
+    margin-top: 1rem;
 }
 
-.description-section {
-    margin-top: 1rem;
-
-    summary {
-        cursor: pointer;
-        color: #8bc34a;
-        font-size: clamp(var(--font-size-sm), 3vw, var(--font-size-lg));
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
+.technology-icons i {
+    font-size: clamp(var(--icon-size-sm), 2.5vw, var(--icon-size-md));
+    transition: color 0.3s ease;
 }
 
-.description {
-    margin-top: 1rem;
-    line-height: 1.6;
-    font-size: clamp(var(--font-size-sm), 3vw, var(--font-size-lg));
-    color: #a4a4a4;
+.technology-icons i:hover {
+    color: #8bc34a;
 }
 
 @media (max-width: 768px) {
     .experience-section {
-        grid-template-columns: 1fr;
+        padding: 0; 
+    }
+
+    .experience-card {
+        padding: 1rem;
+    }
+
+    .positions-list {
+        padding-left: 1.5rem;
     }
 }
 
 @media (max-width: 480px) {
-    #experience {
-        padding: 1.5rem 0.75rem;
-    }
-
-    .company {
+    .institution-header {
         flex-direction: column;
-        align-items: center;
         text-align: center;
     }
 
-    .skills-icons {
-        justify-content: center;
-    }
-
-    .role {
-        margin-bottom: 1rem;
-    }
-
-    .description-section {
-        text-align: center;
-    }
-
-    .description {
-        text-align: left;
-    }
-}
-
-@media (max-width: 320px) {
-    .job {
-        padding: 1rem;
-    }
-
-    .job-icon {
-        width: 60px;
-        height: 60px;
+    .institution-logo {
+        width: 50px;
+        height: 50px;
     }
 }
