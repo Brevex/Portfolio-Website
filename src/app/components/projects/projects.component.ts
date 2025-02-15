@@ -45,13 +45,6 @@ export class ProjectsComponent implements OnInit {
       description: "A full-stack system for real-time monitoring of web service statuses.",
       technologies: ["java", "spring", "vuejs", "postgresql"]
     },
-    {
-      name: "BitCrab",
-      image: "assets/projects/bitcrab.png",
-      githubUrl: "https://github.com/Brevex/BitCrab.git",
-      description: "A CLI application for downloading files via the BitTorrent protocol, implemented in Rust, focused on efficiency and security.",
-      technologies: ["rust"]
-    },
   ];
 
   currentIndex = 0;

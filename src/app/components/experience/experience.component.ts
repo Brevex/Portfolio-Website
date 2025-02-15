@@ -31,14 +31,14 @@ export class ExperienceComponent {
         {
           title: "AI Developer",
           period: "2025 - Present",
-          description: "I actively contribute to the development of a sophisticated real-time fault detection system using computer vision, leveraging cutting-edge technologies to enhance industrial automation in the textile sector. Collaborating with a proactive team, I follow agile development principles to deliver high-quality solutions that prioritize production efficiency and customer satisfaction.",
-          technologies: ["python", "c", "opencv"]
+          description: "I contribute to the development of a sophisticated real-time fault detection system using machine learning and computer vision, implementing cutting-edge technologies for industrial automation in the textile sector. Working within a proactive team that follows agile development principles, I help deliver a high-quality product focused on production efficiency and customer satisfaction.",
+          technologies: ["python", "opencv"]
         },
         {
           title: "Back-end Developer",
           period: "2024",
-          description: "I conducted research on animal behavior patterns using machine learning and computer vision techniques with Python, while also developing a model management system using Java and Spring. To optimize the project lifecycle, I implemented MLOps strategies, including Docker for containerization, monitoring and retraining models, benchmarking, and establishing model review and governance processes to ensure compliance and performance. Additionally, I served as a liaison between cross-functional teams, facilitating seamless access to AI models for non-technical stakeholders.",
-          technologies: ["java", "spring", "python", "postgresql", "docker"]
+          description: "I developed a behavioral pattern identification mechanism using Python, focused on machine learning and computer vision, successfully integrating AI models with a Java Spring-based management system. Acting as a bridge between cross-functional teams, I ensured that non-technical team members had accessible interfaces to AI models, facilitating broader organizational adoption of these technologies.",
+          technologies: ["java", "spring", "python", "docker"]
         },
       ]
     },
@@ -49,8 +49,8 @@ export class ExperienceComponent {
         {
           title: "Back-end Developer",
           period: "2020 - 2021",
-          description: "At EJECT, I was responsible for developing and delivering customized web systems tailored to the needs of companies, contributing to business growth and the automation of essential processes. I developed robust web applications with a focus on creating and integrating RESTful APIs and ensuring efficient database communication using Java, Spring, Angular, and PostgreSQL. Working in an agile environment, I collaborated with multifunctional teams to deliver high-quality solutions aligned with client objectives.",
-          technologies: ["java", "spring", "angular", "postgresql", "docker"]
+          description: "I was responsible for developing and delivering customized web systems for businesses, helping them expand their operations and automate essential processes. I built robust web applications, focusing on creating and integrating RESTful APIs and establishing efficient database communications using Java, Spring and Angular. Working in an agile development environment, I collaborated with cross-functional teams to ensure high-quality deliverables that aligned with client objectives.",
+          technologies: ["java", "spring", "angular", "docker"]
         },
       ]
     }
