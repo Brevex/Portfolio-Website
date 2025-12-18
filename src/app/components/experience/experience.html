@@ -1,12 +1,12 @@
 <section class="experience" id="experience" aria-labelledby="experience-title">
   <div class="container">
     <header class="section-header">
-      <span class="section-label">// Trajetória</span>
-      <h2 id="experience-title" class="section-title">Experiência</h2>
+      <span class="section-label">{{ 'EXPERIENCE.SECTION_LABEL' | translate }}</span>
+      <h2 id="experience-title" class="section-title">{{ 'EXPERIENCE.SECTION_TITLE' | translate }}</h2>
     </header>
 
     <div class="timeline" role="list">
-      @for (exp of experiences; track exp.id; let isLast = $last) {
+      @for (exp of experiences; track exp.id; let isLast = $last; let idx = $index) {
         <article 
           class="timeline-item" 
           [class.timeline-item--expanded]="isExpanded(exp.id)"
@@ -20,41 +20,41 @@
             }
           </div>
 
-          <div class="timeline-content">
+          <div class="timeline-content" (click)="toggleExpanded(exp.id)">
             <div class="timeline-header">
               <div class="timeline-company">
                 <div class="company-avatar" aria-hidden="true">
                   {{ exp.company.charAt(0) }}
                 </div>
                 <div class="company-info">
-                  <h3 class="company-role">{{ exp.role }}</h3>
-                  <p class="company-name">{{ exp.company }}</p>
+                  <h3 class="company-role">{{ exp.roleKey | translate }}</h3>
+                  <p class="company-name">{{ exp.companyKey | translate }}</p>
                 </div>
               </div>
 
               <div class="timeline-meta">
                 <span class="meta-badge meta-badge--date">
-                  {{ formatDateRange(exp.startDate, exp.endDate) }}
+                  {{ exp.startDate }} - {{ exp.endDate ? exp.endDate : ('EXPERIENCE.CURRENT' | translate) }}
                 </span>
                 <span class="meta-badge meta-badge--location">
-                  {{ exp.location }}
+                  {{ exp.locationKey | translate }}
                 </span>
               </div>
             </div>
 
             <button 
               class="timeline-toggle"
-              (click)="toggleExpanded(exp.id)"
+              (click)="toggleExpanded(exp.id); $event.stopPropagation()"
               [attr.aria-expanded]="isExpanded(exp.id)"
               [attr.aria-controls]="'details-' + exp.id"
             >
               @if (isExpanded(exp.id)) {
-                <span>Esconder detalhes</span>
+                <span>{{ 'EXPERIENCE.HIDE_DETAILS' | translate }}</span>
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
                 </svg>
               } @else {
-                <span>Ver detalhes</span>
+                <span>{{ 'EXPERIENCE.SHOW_DETAILS' | translate }}</span>
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>
@@ -66,15 +66,15 @@
                 class="timeline-details" 
                 [id]="'details-' + exp.id"
               >
-                <p class="details-description">{{ exp.description }}</p>
+                <p class="details-description">{{ exp.descriptionKey | translate }}</p>
 
                 <div class="details-highlights">
-                  <h4 class="highlights-title">Destaques</h4>
+                  <h4 class="highlights-title">{{ 'EXPERIENCE.HIGHLIGHTS_TITLE' | translate }}</h4>
                   <ul class="highlights-list">
-                    @for (highlight of exp.highlights; track highlight) {
+                    @for (highlightKey of exp.highlightKeys; track highlightKey) {
                       <li class="highlight-item">
                         <span class="highlight-bullet" aria-hidden="true">→</span>
-                        {{ highlight }}
+                        {{ highlightKey | translate }}
                       </li>
                     }
                   </ul>

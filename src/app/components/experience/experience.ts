@@ -1,10 +1,12 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { EXPERIENCES, formatDateRange } from '../../data/portfolio-data';
 
 @Component({
   selector: 'app-experience',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [TranslateModule],
   templateUrl: './experience.html',
   styleUrl: './experience.css',
 })

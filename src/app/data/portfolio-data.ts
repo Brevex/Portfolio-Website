@@ -1,13 +1,13 @@
 /**
  * Portfolio Data Layer
- * Strongly typed interfaces and mock data for all sections
+ * Strongly typed interfaces and data with translation keys for i18n
  */
 
 // ===== Interfaces =====
 
 export interface Technology {
   readonly name: string;
-  readonly icon: string; // SVG path or icon name
+  readonly icon: string;
   readonly color?: string;
 }
 
@@ -19,22 +19,29 @@ export interface SocialLink {
 
 export interface Experience {
   readonly id: string;
-  readonly company: string;
+  readonly company: string; // Fallback display name
+  readonly companyKey: string; // Translation key
   readonly companyLogo?: string;
-  readonly role: string;
+  readonly role: string; // Fallback
+  readonly roleKey: string; // Translation key
   readonly type: 'full-time' | 'part-time' | 'contract' | 'freelance';
   readonly startDate: string;
-  readonly endDate?: string; // undefined = current
-  readonly location: string;
-  readonly description: string;
-  readonly highlights: readonly string[];
+  readonly endDate?: string;
+  readonly location: string; // Fallback
+  readonly locationKey: string; // Translation key
+  readonly description: string; // Fallback
+  readonly descriptionKey: string; // Translation key
+  readonly highlights: readonly string[]; // Fallback
+  readonly highlightKeys: readonly string[]; // Translation keys
   readonly technologies: readonly string[];
 }
 
 export interface Project {
   readonly id: string;
-  readonly name: string;
-  readonly description: string;
+  readonly name: string; // Fallback
+  readonly nameKey: string; // Translation key
+  readonly description: string; // Fallback
+  readonly descriptionKey: string; // Translation key
   readonly image?: string;
   readonly technologies: readonly string[];
   readonly githubUrl?: string;
@@ -56,7 +63,7 @@ export interface Profile {
 export const PROFILE: Profile = {
   name: 'Breno Barbosa',
   title: 'Software Developer',
-  bio: 'Desenvolvedor apaixonado por criar soluções elegantes e performáticas. Especialista em aplicações web modernas com foco em experiência do usuário.',
+  bio: 'Desenvolvedor apaixonado por criar soluções elegantes e performáticas.',
   location: 'Brasil',
   email: 'contato@brenobarbosa.dev',
   socialLinks: [
@@ -90,54 +97,78 @@ export const EXPERIENCES: readonly Experience[] = [
   {
     id: 'exp-1',
     company: 'Tech Company',
+    companyKey: 'EXPERIENCE.COMPANIES.TECH_COMPANY',
     companyLogo: undefined,
     role: 'Senior Software Developer',
+    roleKey: 'EXPERIENCE.ROLES.SENIOR_DEV',
     type: 'full-time',
     startDate: '2022-01',
     endDate: undefined,
     location: 'Remoto',
-    description:
-      'Liderança técnica no desenvolvimento de aplicações web escaláveis utilizando Angular e Node.js. Responsável pela arquitetura de micro-frontends e implementação de práticas DevOps.',
+    locationKey: 'EXPERIENCE.LOCATIONS.REMOTE',
+    description: 'Liderança técnica no desenvolvimento de aplicações web escaláveis.',
+    descriptionKey: 'EXPERIENCE.DESCRIPTIONS.EXP_1',
     highlights: [
-      'Reduziu tempo de build em 40% com otimizações de bundling',
-      'Implementou CI/CD pipeline com GitHub Actions',
-      'Mentoria de desenvolvedores júnior',
+      'Reduziu tempo de build em 40%',
+      'Implementou CI/CD pipeline',
+      'Mentoria de desenvolvedores',
+    ],
+    highlightKeys: [
+      'EXPERIENCE.HIGHLIGHTS.EXP_1_H1',
+      'EXPERIENCE.HIGHLIGHTS.EXP_1_H2',
+      'EXPERIENCE.HIGHLIGHTS.EXP_1_H3',
     ],
     technologies: ['Angular', 'TypeScript', 'Node.js', 'PostgreSQL', 'Docker'],
   },
   {
     id: 'exp-2',
     company: 'Startup XYZ',
+    companyKey: 'EXPERIENCE.COMPANIES.STARTUP_XYZ',
     companyLogo: undefined,
     role: 'Full Stack Developer',
+    roleKey: 'EXPERIENCE.ROLES.FULLSTACK_DEV',
     type: 'full-time',
     startDate: '2020-03',
     endDate: '2021-12',
     location: 'São Paulo, SP',
-    description:
-      'Desenvolvimento de plataforma SaaS para gestão empresarial. Stack completa com Angular no frontend e Python/FastAPI no backend.',
+    locationKey: 'EXPERIENCE.LOCATIONS.SAO_PAULO',
+    description: 'Desenvolvimento de plataforma SaaS para gestão empresarial.',
+    descriptionKey: 'EXPERIENCE.DESCRIPTIONS.EXP_2',
     highlights: [
-      'Desenvolveu sistema de autenticação multi-tenant',
-      'Criou biblioteca de componentes reutilizáveis',
+      'Sistema de autenticação multi-tenant',
+      'Biblioteca de componentes reutilizáveis',
       'Integração com APIs de pagamento',
+    ],
+    highlightKeys: [
+      'EXPERIENCE.HIGHLIGHTS.EXP_2_H1',
+      'EXPERIENCE.HIGHLIGHTS.EXP_2_H2',
+      'EXPERIENCE.HIGHLIGHTS.EXP_2_H3',
     ],
     technologies: ['Angular', 'Python', 'FastAPI', 'PostgreSQL', 'Redis'],
   },
   {
     id: 'exp-3',
     company: 'Agência Digital',
+    companyKey: 'EXPERIENCE.COMPANIES.DIGITAL_AGENCY',
     companyLogo: undefined,
     role: 'Frontend Developer',
+    roleKey: 'EXPERIENCE.ROLES.FRONTEND_DEV',
     type: 'full-time',
     startDate: '2018-06',
     endDate: '2020-02',
     location: 'Rio de Janeiro, RJ',
-    description:
-      'Desenvolvimento de sites e aplicações web para clientes diversos. Foco em performance, acessibilidade e SEO.',
+    locationKey: 'EXPERIENCE.LOCATIONS.RIO',
+    description: 'Desenvolvimento de sites e aplicações web para clientes diversos.',
+    descriptionKey: 'EXPERIENCE.DESCRIPTIONS.EXP_3',
     highlights: [
-      'Entregou mais de 20 projetos para clientes',
-      'Implementou práticas de acessibilidade WCAG 2.1',
+      'Entregou mais de 20 projetos',
+      'Implementou acessibilidade WCAG 2.1',
       'Otimização Core Web Vitals',
+    ],
+    highlightKeys: [
+      'EXPERIENCE.HIGHLIGHTS.EXP_3_H1',
+      'EXPERIENCE.HIGHLIGHTS.EXP_3_H2',
+      'EXPERIENCE.HIGHLIGHTS.EXP_3_H3',
     ],
     technologies: ['JavaScript', 'Angular', 'SCSS', 'WordPress'],
   },
@@ -147,8 +178,9 @@ export const PROJECTS: readonly Project[] = [
   {
     id: 'proj-1',
     name: 'CLI Forense',
-    description:
-      'Ferramenta de linha de comando em Rust para análise e recuperação de dados em sistemas de arquivos. Suporte a múltiplos formatos e otimizada para performance.',
+    nameKey: 'PROJECTS.TITLES.PROJ_1',
+    description: 'Ferramenta de linha de comando em Rust para análise e recuperação de dados.',
+    descriptionKey: 'PROJECTS.DESCRIPTIONS.PROJ_1',
     image: undefined,
     technologies: ['Rust', 'CLI', 'Sistemas'],
     githubUrl: 'https://github.com/brenobarbosa/cli-forense',
@@ -158,8 +190,9 @@ export const PROJECTS: readonly Project[] = [
   {
     id: 'proj-2',
     name: 'Dashboard Analytics',
-    description:
-      'Dashboard em tempo real para visualização de métricas e KPIs. Construído com Angular e WebSockets para atualizações instantâneas.',
+    nameKey: 'PROJECTS.TITLES.PROJ_2',
+    description: 'Dashboard em tempo real para visualização de métricas e KPIs.',
+    descriptionKey: 'PROJECTS.DESCRIPTIONS.PROJ_2',
     image: undefined,
     technologies: ['Angular', 'TypeScript', 'D3.js', 'WebSocket'],
     githubUrl: 'https://github.com/brenobarbosa/dashboard',
@@ -169,8 +202,9 @@ export const PROJECTS: readonly Project[] = [
   {
     id: 'proj-3',
     name: 'API Gateway',
-    description:
-      'Gateway de API com rate limiting, caching e autenticação JWT. Desenvolvido em Node.js com foco em alta disponibilidade.',
+    nameKey: 'PROJECTS.TITLES.PROJ_3',
+    description: 'Gateway de API com rate limiting, caching e autenticação JWT.',
+    descriptionKey: 'PROJECTS.DESCRIPTIONS.PROJ_3',
     image: undefined,
     technologies: ['Node.js', 'TypeScript', 'Redis', 'Docker'],
     githubUrl: 'https://github.com/brenobarbosa/api-gateway',
@@ -180,8 +214,9 @@ export const PROJECTS: readonly Project[] = [
   {
     id: 'proj-4',
     name: 'Design System',
-    description:
-      'Biblioteca de componentes UI reutilizáveis com documentação Storybook e testes automatizados.',
+    nameKey: 'PROJECTS.TITLES.PROJ_4',
+    description: 'Biblioteca de componentes UI reutilizáveis com Storybook.',
+    descriptionKey: 'PROJECTS.DESCRIPTIONS.PROJ_4',
     image: undefined,
     technologies: ['Angular', 'SCSS', 'Storybook', 'Jest'],
     githubUrl: 'https://github.com/brenobarbosa/design-system',

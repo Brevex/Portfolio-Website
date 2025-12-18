@@ -1,10 +1,12 @@
 import { ChangeDetectionStrategy, Component, signal, computed } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { PROJECTS, type Project } from '../../data/portfolio-data';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [TranslateModule],
   templateUrl: './projects.html',
   styleUrl: './projects.css',
 })

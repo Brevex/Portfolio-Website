@@ -1,0 +1,83 @@
+{
+  "NAV": {
+    "EXPERIENCE": "Experiência",
+    "PROJECTS": "Projetos",
+    "CONTACT": "Contato"
+  },
+  "HERO": {
+    "GREETING": "Olá, eu sou",
+    "TITLE": "Software Developer",
+    "BIO": "Desenvolvedor apaixonado por criar soluções elegantes e performáticas. Especialista em aplicações web modernas com foco em experiência do usuário.",
+    "TECH_LABEL": "// Tech Stack"
+  },
+  "EXPERIENCE": {
+    "SECTION_LABEL": "// Trajetória",
+    "SECTION_TITLE": "Experiência",
+    "CURRENT": "Presente",
+    "SHOW_DETAILS": "Ver detalhes",
+    "HIDE_DETAILS": "Esconder detalhes",
+    "HIGHLIGHTS_TITLE": "Destaques",
+    "ROLES": {
+      "SENIOR_DEV": "Senior Software Developer",
+      "FULLSTACK_DEV": "Full Stack Developer",
+      "FRONTEND_DEV": "Frontend Developer"
+    },
+    "COMPANIES": {
+      "TECH_COMPANY": "Tech Company",
+      "STARTUP_XYZ": "Startup XYZ",
+      "DIGITAL_AGENCY": "Agência Digital"
+    },
+    "LOCATIONS": {
+      "REMOTE": "Remoto",
+      "SAO_PAULO": "São Paulo, SP",
+      "RIO": "Rio de Janeiro, RJ"
+    },
+    "DESCRIPTIONS": {
+      "EXP_1": "Liderança técnica no desenvolvimento de aplicações web escaláveis utilizando Angular e Node.js. Responsável pela arquitetura de micro-frontends e implementação de práticas DevOps.",
+      "EXP_2": "Desenvolvimento de plataforma SaaS para gestão empresarial. Stack completa com Angular no frontend e Python/FastAPI no backend.",
+      "EXP_3": "Desenvolvimento de sites e aplicações web para clientes diversos. Foco em performance, acessibilidade e SEO."
+    },
+    "HIGHLIGHTS": {
+      "EXP_1_H1": "Reduziu tempo de build em 40% com otimizações de bundling",
+      "EXP_1_H2": "Implementou CI/CD pipeline com GitHub Actions",
+      "EXP_1_H3": "Mentoria de desenvolvedores júnior",
+      "EXP_2_H1": "Desenvolveu sistema de autenticação multi-tenant",
+      "EXP_2_H2": "Criou biblioteca de componentes reutilizáveis",
+      "EXP_2_H3": "Integração com APIs de pagamento",
+      "EXP_3_H1": "Entregou mais de 20 projetos para clientes",
+      "EXP_3_H2": "Implementou práticas de acessibilidade WCAG 2.1",
+      "EXP_3_H3": "Otimização Core Web Vitals"
+    }
+  },
+  "PROJECTS": {
+    "SECTION_LABEL": "// Portfólio",
+    "SECTION_TITLE": "Projetos",
+    "FEATURED_BADGE": "Destaque",
+    "VIEW_GITHUB": "GitHub",
+    "VIEW_DEMO": "Demo",
+    "TITLES": {
+      "PROJ_1": "CLI Forense",
+      "PROJ_2": "Dashboard Analytics",
+      "PROJ_3": "API Gateway",
+      "PROJ_4": "Design System"
+    },
+    "DESCRIPTIONS": {
+      "PROJ_1": "Ferramenta de linha de comando em Rust para análise e recuperação de dados em sistemas de arquivos. Suporte a múltiplos formatos e otimizada para performance.",
+      "PROJ_2": "Dashboard em tempo real para visualização de métricas e KPIs. Construído com Angular e WebSockets para atualizações instantâneas.",
+      "PROJ_3": "Gateway de API com rate limiting, caching e autenticação JWT. Desenvolvido em Node.js com foco em alta disponibilidade.",
+      "PROJ_4": "Biblioteca de componentes UI reutilizáveis com documentação Storybook e testes automatizados."
+    }
+  },
+  "FOOTER": {
+    "CONTACT_HEADING": "Contato",
+    "EMAIL": "E-mail",
+    "COPYRIGHT": "Copyright © {{startYear}}-{{currentYear}} {{name}}. Todos os direitos reservados.",
+    "MADE_WITH": "Feito com",
+    "AND": "e"
+  },
+  "COMMON": {
+    "OPEN_MENU": "Abrir menu de navegação",
+    "CLOSE_MENU": "Fechar menu",
+    "GO_TO_START": "Ir para o início"
+  }
+}

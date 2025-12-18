@@ -1,6 +1,6 @@
 <nav class="navbar glass" aria-label="Navegação principal">
   <div class="navbar-content">
-    <a href="#" class="navbar-logo" aria-label="Ir para o início">
+    <a href="#" class="navbar-logo" [attr.aria-label]="'COMMON.GO_TO_START' | translate">
       <span class="logo-bracket">&lt;</span>
       <span class="logo-name">{{ profile.name.split(' ')[0] }}</span>
       <span class="logo-bracket">/&gt;</span>
@@ -11,10 +11,13 @@
       @for (link of navLinks; track link.href) {
         <li>
           <a [href]="link.href" class="nav-link">
-            {{ link.label }}
+            {{ link.labelKey | translate }}
           </a>
         </li>
       }
+      <li class="nav-lang">
+        <app-language-switcher />
+      </li>
     </ul>
 
     <!-- Mobile Menu Button -->
@@ -23,7 +26,7 @@
       (click)="toggleMenu()"
       [attr.aria-expanded]="isMenuOpen()"
       aria-controls="mobile-menu"
-      aria-label="Abrir menu de navegação"
+      [attr.aria-label]="'COMMON.OPEN_MENU' | translate"
     >
       <span class="menu-toggle-bar"></span>
       <span class="menu-toggle-bar"></span>
@@ -43,12 +46,16 @@
     <button 
       class="mobile-menu-close"
       (click)="closeMenu()"
-      aria-label="Fechar menu"
+      [attr.aria-label]="'COMMON.CLOSE_MENU' | translate"
     >
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
       </svg>
     </button>
+
+    <div class="mobile-menu-lang">
+      <app-language-switcher />
+    </div>
 
     <ul class="mobile-menu-links" role="list">
       @for (link of navLinks; track link.href) {
@@ -58,7 +65,7 @@
             class="mobile-nav-link"
             (click)="closeMenu()"
           >
-            {{ link.label }}
+            {{ link.labelKey | translate }}
           </a>
         </li>
       }

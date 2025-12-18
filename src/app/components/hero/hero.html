@@ -2,11 +2,11 @@
   <div class="hero-content container">
     <div class="hero-text">
       <p class="hero-greeting">
-        <span class="terminal-prompt">$</span> Olá, eu sou
+        <span class="terminal-prompt">$</span> {{ 'HERO.GREETING' | translate }}
       </p>
       <h1 class="hero-name neon-green">{{ profile.name }}</h1>
-      <h2 class="hero-title">{{ profile.title }}</h2>
-      <p class="hero-bio">{{ profile.bio }}</p>
+      <h2 class="hero-title">{{ 'HERO.TITLE' | translate }}</h2>
+      <p class="hero-bio">{{ 'HERO.BIO' | translate }}</p>
       
       <div class="hero-cta">
         @for (link of profile.socialLinks; track link.name) {
@@ -36,7 +36,7 @@
     </div>
 
     <div class="hero-tech" aria-label="Tecnologias">
-      <p class="tech-label">// Tech Stack</p>
+      <p class="tech-label">{{ 'HERO.TECH_LABEL' | translate }}</p>
       <div class="tech-grid">
         @for (tech of technologies; track tech.name) {
           <div class="tech-item" [title]="tech.name">
