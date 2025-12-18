@@ -1,10 +1,12 @@
 .hero {
   min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport for mobile browsers */
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
   padding-top: var(--space-20);
+  padding-bottom: var(--space-10);
 }
 
 .hero-content {
@@ -54,9 +56,10 @@
   max-width: 50ch;
 }
 
-/* CTA Buttons */
+/* CTA Buttons - Touch friendly */
 .hero-cta {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-4);
   margin-top: var(--space-4);
 }
@@ -64,8 +67,10 @@
 .cta-button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-2);
   padding: var(--space-3) var(--space-5);
+  min-height: var(--touch-target);
   background: var(--color-bg-tertiary);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
@@ -83,10 +88,23 @@
   box-shadow: var(--shadow-glow-green);
 }
 
+/* Remove hover transform on touch devices */
+@media (hover: none) {
+  .cta-button:hover {
+    transform: none;
+  }
+  
+  .cta-button:active {
+    background: var(--color-accent-green);
+    color: var(--color-bg-primary);
+  }
+}
+
 .cta-icon {
   width: 18px;
   height: 18px;
   display: flex;
+  flex-shrink: 0;
 }
 
 .cta-icon svg {
@@ -94,7 +112,7 @@
   height: 100%;
 }
 
-/* Tech Stack */
+/* Tech Stack - Responsive Grid */
 .hero-tech {
   display: flex;
   flex-direction: column;
@@ -109,7 +127,7 @@
 
 .tech-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: var(--space-3);
 }
 
@@ -118,6 +136,7 @@
   align-items: center;
   gap: var(--space-3);
   padding: var(--space-3) var(--space-4);
+  min-height: var(--touch-target);
   background: var(--color-bg-card);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-md);
@@ -127,6 +146,12 @@
 .tech-item:hover {
   border-color: var(--color-accent-green);
   transform: translateX(4px);
+}
+
+@media (hover: none) {
+  .tech-item:hover {
+    transform: none;
+  }
 }
 
 .tech-name {
@@ -176,20 +201,20 @@
   }
 }
 
-/* Responsive */
-@media (max-width: 900px) {
+/* ===== Responsive - Tablet ===== */
+@media (max-width: 1023px) {
   .hero-content {
     grid-template-columns: 1fr;
     gap: var(--space-10);
-    text-align: center;
   }
 
   .hero-text {
+    text-align: center;
     align-items: center;
   }
 
   .hero-bio {
-    max-width: 100%;
+    max-width: 60ch;
   }
 
   .hero-cta {
@@ -197,17 +222,24 @@
   }
 
   .tech-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
 }
 
-@media (max-width: 640px) {
-  .hero-name {
-    font-size: var(--text-4xl);
+/* ===== Responsive - Mobile ===== */
+@media (max-width: 767px) {
+  .hero {
+    padding-top: calc(var(--touch-target) + var(--space-12));
+    padding-bottom: var(--space-16);
   }
 
-  .hero-title {
-    font-size: var(--text-xl);
+  .hero-content {
+    gap: var(--space-8);
+  }
+
+  .hero-bio {
+    max-width: 100%;
+    font-size: var(--text-base);
   }
 
   .hero-cta {
@@ -216,6 +248,30 @@
   }
 
   .cta-button {
-    justify-content: center;
+    width: 100%;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tech-item {
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .tech-name {
+    font-size: var(--text-xs);
+  }
+
+  /* Hide scroll indicator on mobile */
+  .hero-scroll {
+    display: none;
+  }
+}
+
+/* ===== Small Mobile (320px) ===== */
+@media (max-width: 374px) {
+  .tech-grid {
+    grid-template-columns: 1fr;
   }
 }

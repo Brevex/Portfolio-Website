@@ -1,3 +1,4 @@
+/* ===== Navbar Base ===== */
 .navbar {
   position: fixed;
   top: var(--space-4);
@@ -17,7 +18,7 @@
   gap: var(--space-8);
 }
 
-/* Logo */
+/* ===== Logo ===== */
 .navbar-logo {
   display: flex;
   align-items: center;
@@ -28,6 +29,7 @@
   color: var(--color-text-primary);
   text-decoration: none;
   transition: transform var(--transition-fast);
+  min-height: var(--touch-target);
 }
 
 .navbar-logo:hover {
@@ -43,8 +45,8 @@
   color: var(--color-text-primary);
 }
 
-/* Navigation Links */
-.navbar-links {
+/* ===== Desktop Navigation ===== */
+.navbar-links--desktop {
   display: flex;
   align-items: center;
   gap: var(--space-6);
@@ -59,6 +61,9 @@
   border-radius: var(--radius-md);
   transition: all var(--transition-fast);
   position: relative;
+  min-height: var(--touch-target);
+  display: flex;
+  align-items: center;
 }
 
 .nav-link::after {
@@ -81,19 +86,159 @@
   transform: translateX(-50%) scaleX(1);
 }
 
-/* Responsive */
-@media (max-width: 640px) {
-  .navbar {
-    padding: var(--space-2) var(--space-4);
-  }
+/* ===== Hamburger Menu Toggle ===== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: var(--touch-target);
+  height: var(--touch-target);
+  padding: var(--space-2);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
 
-  .navbar-links {
-    gap: var(--space-3);
+.menu-toggle-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-text-primary);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+/* ===== Mobile Menu Overlay ===== */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 15, 0.98);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  z-index: var(--z-overlay);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-base), visibility var(--transition-base);
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-6);
+  padding-top: var(--space-20);
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: var(--touch-target);
+  height: var(--touch-target);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-primary);
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-fast);
+}
+
+.mobile-menu-close:hover {
+  background: var(--color-accent-green);
+  color: var(--color-bg-primary);
+}
+
+.mobile-menu-close svg {
+  width: 24px;
+  height: 24px;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: var(--space-6);
+}
+
+.mobile-nav-link {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xl);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  padding: var(--space-4) var(--space-6);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-fast);
+  min-height: var(--touch-target);
+  display: flex;
+  align-items: center;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link:active {
+  color: var(--color-accent-green);
+  background: var(--color-bg-tertiary);
+}
+
+.mobile-menu-footer {
+  text-align: center;
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--glass-border);
+}
+
+.mobile-logo {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.mobile-logo .logo-bracket {
+  color: var(--color-accent-green);
+}
+
+/* ===== Responsive - Tablet ===== */
+@media (max-width: 1023px) {
+  .navbar-links--desktop {
+    gap: var(--space-4);
   }
 
   .nav-link {
     font-size: var(--text-xs);
-    padding: var(--space-1) var(--space-2);
+    padding: var(--space-2);
+  }
+}
+
+/* ===== Responsive - Mobile ===== */
+@media (max-width: 767px) {
+  .navbar {
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    padding: var(--space-2) var(--space-4);
+    border-bottom: 1px solid var(--glass-border);
+  }
+
+  .navbar-links--desktop {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
   }
 
   .navbar-logo {

@@ -6,7 +6,8 @@
       <span class="logo-bracket">/&gt;</span>
     </a>
 
-    <ul class="navbar-links" role="list">
+    <!-- Desktop Navigation -->
+    <ul class="navbar-links navbar-links--desktop" role="list">
       @for (link of navLinks; track link.href) {
         <li>
           <a [href]="link.href" class="nav-link">
@@ -15,5 +16,60 @@
         </li>
       }
     </ul>
+
+    <!-- Mobile Menu Button -->
+    <button 
+      class="menu-toggle"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="isMenuOpen()"
+      aria-controls="mobile-menu"
+      aria-label="Abrir menu de navegação"
+    >
+      <span class="menu-toggle-bar"></span>
+      <span class="menu-toggle-bar"></span>
+      <span class="menu-toggle-bar"></span>
+    </button>
   </div>
 </nav>
+
+<!-- Mobile Menu Overlay -->
+<div 
+  id="mobile-menu"
+  class="mobile-menu"
+  [class.is-open]="isMenuOpen()"
+  [attr.aria-hidden]="!isMenuOpen()"
+>
+  <div class="mobile-menu-content">
+    <button 
+      class="mobile-menu-close"
+      (click)="closeMenu()"
+      aria-label="Fechar menu"
+    >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <ul class="mobile-menu-links" role="list">
+      @for (link of navLinks; track link.href) {
+        <li>
+          <a 
+            [href]="link.href" 
+            class="mobile-nav-link"
+            (click)="closeMenu()"
+          >
+            {{ link.label }}
+          </a>
+        </li>
+      }
+    </ul>
+
+    <div class="mobile-menu-footer">
+      <span class="mobile-logo">
+        <span class="logo-bracket">&lt;</span>
+        {{ profile.name }}
+        <span class="logo-bracket">/&gt;</span>
+      </span>
+    </div>
+  </div>
+</div>

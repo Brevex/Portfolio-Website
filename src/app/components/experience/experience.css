@@ -81,10 +81,18 @@
   border-radius: var(--radius-lg);
   padding: var(--space-5);
   transition: all var(--transition-base);
+  cursor: pointer;
 }
 
 .timeline-item--expanded .timeline-content {
   border-color: var(--color-accent-green);
+}
+
+/* Make entire card tappable on touch */
+@media (hover: none) {
+  .timeline-content:active {
+    border-color: var(--color-accent-cyan);
+  }
 }
 
 /* Timeline Header */
@@ -114,6 +122,7 @@
   font-size: var(--text-xl);
   font-weight: 700;
   color: var(--color-bg-primary);
+  flex-shrink: 0;
 }
 
 .company-info {
@@ -162,7 +171,7 @@
   color: var(--color-text-muted);
 }
 
-/* Toggle Button */
+/* Toggle Button - Touch friendly */
 .timeline-toggle {
   display: flex;
   align-items: center;
@@ -173,10 +182,15 @@
   color: var(--color-accent-cyan);
   cursor: pointer;
   transition: color var(--transition-fast);
+  min-height: var(--touch-target);
+  padding: var(--space-2);
+  margin-left: calc(-1 * var(--space-2));
+  border-radius: var(--radius-md);
 }
 
 .timeline-toggle:hover {
   color: var(--color-accent-green);
+  background: var(--color-bg-tertiary);
 }
 
 .toggle-icon {
@@ -256,17 +270,29 @@
   color: var(--color-accent-amber);
 }
 
-/* Responsive */
-@media (max-width: 640px) {
+/* ===== Responsive - Tablet ===== */
+@media (max-width: 1023px) {
+  .section-header {
+    margin-bottom: var(--space-8);
+  }
+}
+
+/* ===== Responsive - Mobile ===== */
+@media (max-width: 767px) {
   .timeline-item {
     grid-template-columns: 16px 1fr;
     gap: var(--space-4);
+    padding-bottom: var(--space-6);
   }
 
   .timeline-dot {
     width: 12px;
     height: 12px;
     border-width: 2px;
+  }
+
+  .timeline-content {
+    padding: var(--space-4);
   }
 
   .timeline-header {
@@ -278,9 +304,48 @@
     align-self: flex-start;
   }
 
+  .timeline-company {
+    gap: var(--space-3);
+  }
+
   .company-avatar {
     width: 40px;
     height: 40px;
     font-size: var(--text-lg);
+  }
+
+  .company-role {
+    font-size: var(--text-base);
+  }
+
+  .company-name {
+    font-size: var(--text-xs);
+  }
+
+  .timeline-toggle {
+    width: 100%;
+    justify-content: center;
+    background: var(--color-bg-tertiary);
+  }
+
+  .details-description {
+    font-size: var(--text-sm);
+  }
+
+  .highlight-item {
+    font-size: var(--text-xs);
+  }
+}
+
+/* ===== Small Mobile (320px) ===== */
+@media (max-width: 374px) {
+  .timeline-item {
+    grid-template-columns: 12px 1fr;
+    gap: var(--space-3);
+  }
+
+  .meta-badge {
+    font-size: 0.65rem;
+    padding: var(--space-1) var(--space-2);
   }
 }
