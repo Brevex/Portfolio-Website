@@ -1,0 +1,56 @@
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <span class="footer-logo">
+          <span class="logo-bracket">&lt;</span>
+          <span class="logo-name">{{ profile.name }}</span>
+          <span class="logo-bracket">/&gt;</span>
+        </span>
+        <p class="footer-tagline">{{ profile.title }}</p>
+      </div>
+
+      <div class="footer-links">
+        <h3 class="footer-heading">Contato</h3>
+        <ul class="social-links" role="list">
+          @for (link of profile.socialLinks; track link.name) {
+            <li>
+              <a 
+                [href]="link.url" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="social-link"
+                [attr.aria-label]="link.name"
+              >
+                {{ link.name }}
+                <svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+              </a>
+            </li>
+          }
+          <li>
+            <a [href]="'mailto:' + profile.email" class="social-link">
+              E-mail
+              <svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">
+        Copyright © {{ startYear }}-{{ currentYear }} {{ profile.name }}. Todos os direitos reservados.
+      </p>
+      <p class="made-with">
+        Feito com 
+        <span class="heart" aria-label="amor">❤</span> 
+        e 
+        <span class="code" aria-label="código">Angular</span>
+      </p>
+    </div>
+  </div>
+</footer>

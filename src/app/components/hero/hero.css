@@ -1,0 +1,221 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding-top: var(--space-20);
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+/* Text Content */
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.hero-greeting {
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+}
+
+.terminal-prompt {
+  color: var(--color-accent-green);
+  margin-right: var(--space-2);
+}
+
+.hero-name {
+  font-size: var(--text-6xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.hero-title {
+  font-family: var(--font-sans);
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.hero-bio {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  max-width: 50ch;
+}
+
+/* CTA Buttons */
+.hero-cta {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-primary);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  transition: all var(--transition-base);
+}
+
+.cta-button:hover {
+  background: var(--color-accent-green);
+  color: var(--color-bg-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-green);
+}
+
+.cta-icon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+}
+
+.cta-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Tech Stack */
+.hero-tech {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.tech-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.tech-item:hover {
+  border-color: var(--color-accent-green);
+  transform: translateX(4px);
+}
+
+.tech-name {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+}
+
+/* Scroll Indicator */
+.hero-scroll {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scroll-indicator {
+  display: block;
+  width: 24px;
+  height: 40px;
+  border: 2px solid var(--color-text-muted);
+  border-radius: var(--radius-full);
+  position: relative;
+}
+
+.scroll-indicator::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 8px;
+  background: var(--color-accent-green);
+  border-radius: var(--radius-full);
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+
+@keyframes scroll-bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50%) translateY(12px);
+    opacity: 0.3;
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+    text-align: center;
+  }
+
+  .hero-text {
+    align-items: center;
+  }
+
+  .hero-bio {
+    max-width: 100%;
+  }
+
+  .hero-cta {
+    justify-content: center;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-name {
+    font-size: var(--text-4xl);
+  }
+
+  .hero-title {
+    font-size: var(--text-xl);
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-button {
+    justify-content: center;
+  }
+}

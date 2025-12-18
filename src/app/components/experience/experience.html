@@ -1,0 +1,95 @@
+<section class="experience" id="experience" aria-labelledby="experience-title">
+  <div class="container">
+    <header class="section-header">
+      <span class="section-label">// Trajetória</span>
+      <h2 id="experience-title" class="section-title">Experiência</h2>
+    </header>
+
+    <div class="timeline" role="list">
+      @for (exp of experiences; track exp.id; let isLast = $last) {
+        <article 
+          class="timeline-item" 
+          [class.timeline-item--expanded]="isExpanded(exp.id)"
+          [class.timeline-item--last]="isLast"
+          role="listitem"
+        >
+          <div class="timeline-marker" aria-hidden="true">
+            <span class="timeline-dot"></span>
+            @if (!isLast) {
+              <span class="timeline-line"></span>
+            }
+          </div>
+
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div class="timeline-company">
+                <div class="company-avatar" aria-hidden="true">
+                  {{ exp.company.charAt(0) }}
+                </div>
+                <div class="company-info">
+                  <h3 class="company-role">{{ exp.role }}</h3>
+                  <p class="company-name">{{ exp.company }}</p>
+                </div>
+              </div>
+
+              <div class="timeline-meta">
+                <span class="meta-badge meta-badge--date">
+                  {{ formatDateRange(exp.startDate, exp.endDate) }}
+                </span>
+                <span class="meta-badge meta-badge--location">
+                  {{ exp.location }}
+                </span>
+              </div>
+            </div>
+
+            <button 
+              class="timeline-toggle"
+              (click)="toggleExpanded(exp.id)"
+              [attr.aria-expanded]="isExpanded(exp.id)"
+              [attr.aria-controls]="'details-' + exp.id"
+            >
+              @if (isExpanded(exp.id)) {
+                <span>Esconder detalhes</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+                </svg>
+              } @else {
+                <span>Ver detalhes</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              }
+            </button>
+
+            @if (isExpanded(exp.id)) {
+              <div 
+                class="timeline-details" 
+                [id]="'details-' + exp.id"
+              >
+                <p class="details-description">{{ exp.description }}</p>
+
+                <div class="details-highlights">
+                  <h4 class="highlights-title">Destaques</h4>
+                  <ul class="highlights-list">
+                    @for (highlight of exp.highlights; track highlight) {
+                      <li class="highlight-item">
+                        <span class="highlight-bullet" aria-hidden="true">→</span>
+                        {{ highlight }}
+                      </li>
+                    }
+                  </ul>
+                </div>
+
+                <div class="details-tech">
+                  @for (tech of exp.technologies; track tech) {
+                    <span class="tech-tag">{{ tech }}</span>
+                  }
+                </div>
+              </div>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

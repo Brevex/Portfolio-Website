@@ -1,0 +1,19 @@
+<nav class="navbar glass" aria-label="Navegação principal">
+  <div class="navbar-content">
+    <a href="#" class="navbar-logo" aria-label="Ir para o início">
+      <span class="logo-bracket">&lt;</span>
+      <span class="logo-name">{{ profile.name.split(' ')[0] }}</span>
+      <span class="logo-bracket">/&gt;</span>
+    </a>
+
+    <ul class="navbar-links" role="list">
+      @for (link of navLinks; track link.href) {
+        <li>
+          <a [href]="link.href" class="nav-link">
+            {{ link.label }}
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+</nav>

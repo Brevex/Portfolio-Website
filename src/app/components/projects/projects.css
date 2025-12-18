@@ -1,0 +1,274 @@
+.projects {
+  background: var(--color-bg-primary);
+}
+
+/* Section Header */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-10);
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.section-header-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-accent-green);
+}
+
+.section-title {
+  font-size: var(--text-4xl);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* Carousel Controls */
+.carousel-controls {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.carousel-btn {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.carousel-btn:hover:not(:disabled) {
+  background: var(--color-accent-green);
+  color: var(--color-bg-primary);
+  border-color: var(--color-accent-green);
+}
+
+.carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.carousel-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Carousel */
+.carousel {
+  overflow: hidden;
+  margin: 0 calc(-1 * var(--container-padding));
+  padding: 0 var(--container-padding);
+}
+
+.carousel-track {
+  display: flex;
+  gap: var(--space-6);
+  transition: transform var(--transition-slow);
+}
+
+/* Project Card */
+.project-card {
+  flex: 0 0 calc(33.333% - var(--space-6) * 2 / 3);
+  min-width: 300px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  transition: all var(--transition-base);
+}
+
+.project-card:hover {
+  border-color: var(--color-accent-green);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Project Header */
+.project-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent-amber);
+}
+
+.project-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.project-badge {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  padding: var(--space-1) var(--space-2);
+  background: var(--color-accent-green);
+  color: var(--color-bg-primary);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+}
+
+/* Project Content */
+.project-name {
+  font-family: var(--font-mono);
+  font-size: var(--text-xl);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.project-description {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+  flex: 1;
+}
+
+/* Tech Pills */
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.tech-pill {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  padding: var(--space-1) var(--space-2);
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  color: var(--color-accent-cyan);
+}
+
+/* Project Actions */
+.project-actions {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--glass-border);
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.project-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.project-link--github {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+}
+
+.project-link--github:hover {
+  background: var(--color-text-primary);
+  color: var(--color-bg-primary);
+}
+
+.project-link--live {
+  background: var(--color-accent-green);
+  color: var(--color-bg-primary);
+}
+
+.project-link--live:hover {
+  box-shadow: var(--shadow-glow-green);
+}
+
+/* Carousel Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-8);
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-bg-tertiary);
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: 0;
+}
+
+.carousel-dot:hover {
+  background: var(--color-text-muted);
+}
+
+.carousel-dot--active {
+  background: var(--color-accent-green);
+  width: 24px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .project-card {
+    flex: 0 0 calc(50% - var(--space-6) / 2);
+  }
+}
+
+@media (max-width: 640px) {
+  .project-card {
+    flex: 0 0 100%;
+    min-width: unset;
+  }
+
+  .carousel-controls {
+    display: none;
+  }
+
+  .carousel {
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .carousel-track {
+    transition: none;
+  }
+
+  .project-card {
+    scroll-snap-align: start;
+  }
+}

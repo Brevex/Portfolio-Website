@@ -1,0 +1,102 @@
+.navbar {
+  position: fixed;
+  top: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-navbar);
+  border-radius: var(--radius-full);
+  padding: var(--space-3) var(--space-6);
+  max-width: calc(var(--container-max) - var(--space-8));
+  width: calc(100% - var(--space-8));
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: transform var(--transition-fast);
+}
+
+.navbar-logo:hover {
+  transform: scale(1.02);
+  color: var(--color-text-primary);
+}
+
+.logo-bracket {
+  color: var(--color-accent-green);
+}
+
+.logo-name {
+  color: var(--color-text-primary);
+}
+
+/* Navigation Links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 80%;
+  height: 2px;
+  background: var(--color-accent-green);
+  transition: transform var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--color-accent-green);
+}
+
+.nav-link:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .navbar {
+    padding: var(--space-2) var(--space-4);
+  }
+
+  .navbar-links {
+    gap: var(--space-3);
+  }
+
+  .nav-link {
+    font-size: var(--text-xs);
+    padding: var(--space-1) var(--space-2);
+  }
+
+  .navbar-logo {
+    font-size: var(--text-base);
+  }
+}
