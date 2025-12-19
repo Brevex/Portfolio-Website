@@ -80,5 +80,40 @@
     "OPEN_MENU": "Abrir menu de navegação",
     "CLOSE_MENU": "Fechar menu",
     "GO_TO_START": "Ir para o início"
+  },
+  "EDUCATION": {
+    "SECTION_LABEL": "// Formação",
+    "SECTION_TITLE": "Formação Académica",
+    "SHOW_DETAILS": "Ver detalhes",
+    "HIDE_DETAILS": "Esconder detalhes",
+    "HIGHLIGHTS_TITLE": "Destaques",
+    "DEGREES": {
+      "BACHELOR": "Bacharelado",
+      "MASTER": "Mestrado",
+      "CERTIFICATE": "Certificação"
+    },
+    "FIELDS": {
+      "COMPUTER_SCIENCE": "Ciência da Computação",
+      "MACHINE_LEARNING": "Machine Learning"
+    },
+    "INSTITUTIONS": {
+      "FEDERAL_UNIVERSITY": "Universidade Federal",
+      "MIT": "MIT Professional Education"
+    },
+    "LOCATIONS": {
+      "SAO_PAULO": "São Paulo, SP",
+      "ONLINE": "Online"
+    },
+    "DESCRIPTIONS": {
+      "EDU_1": "Bacharelado em Ciência da Computação com foco em engenharia de software e sistemas distribuídos.",
+      "EDU_2": "Certificação profissional em Machine Learning e Data Science."
+    },
+    "HIGHLIGHTS": {
+      "EDU_1_H1": "TCC sobre Aprendizado de Máquina",
+      "EDU_1_H2": "Bolsista de Iniciação Científica",
+      "EDU_1_H3": "Projeto de extensão em tecnologia assistiva",
+      "EDU_2_H1": "Deep Learning com TensorFlow",
+      "EDU_2_H2": "Computer Vision aplicado"
+    }
   }
 }

@@ -83,7 +83,9 @@
   font-size: var(--text-sm);
   flex-shrink: 0;
   opacity: 0;
-  transition: opacity var(--transition-fast), color var(--transition-fast);
+  transition:
+    opacity var(--transition-fast),
+    color var(--transition-fast);
 }
 
 .nav-link:hover {

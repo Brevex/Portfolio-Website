@@ -1,0 +1,119 @@
+<section class="education" id="education" aria-labelledby="education-title">
+  <div class="container">
+    <header class="section-header">
+      <span class="section-label">{{ 'EDUCATION.SECTION_LABEL' | translate }}</span>
+      <h2 id="education-title" class="section-title">
+        {{ 'EDUCATION.SECTION_TITLE' | translate }}
+      </h2>
+    </header>
+
+    <div class="timeline" role="list">
+      @for (edu of education; track edu.id; let isLast = $last) {
+        <article
+          class="timeline-item"
+          [class.timeline-item--expanded]="isExpanded(edu.id)"
+          [class.timeline-item--last]="isLast"
+          role="listitem"
+        >
+          <div class="timeline-marker" aria-hidden="true">
+            <span class="timeline-dot"></span>
+            @if (!isLast) {
+              <span class="timeline-line"></span>
+            }
+          </div>
+
+          <div
+            class="timeline-content"
+            (click)="toggleExpanded(edu.id)"
+            (keydown.enter)="toggleExpanded(edu.id)"
+            tabindex="0"
+            role="button"
+          >
+            <div class="timeline-header">
+              <div class="timeline-institution">
+                <div class="institution-avatar" aria-hidden="true">
+                  {{ edu.institution.charAt(0) }}
+                </div>
+                <div class="institution-info">
+                  <h3 class="institution-degree">
+                    {{ edu.degreeKey | translate }} - {{ edu.fieldKey | translate }}
+                  </h3>
+                  <p class="institution-name">{{ edu.institutionKey | translate }}</p>
+                </div>
+              </div>
+
+              <div class="timeline-meta">
+                <span class="meta-badge meta-badge--date">
+                  {{ edu.startDate }} -
+                  {{ edu.endDate ? edu.endDate : ('EXPERIENCE.CURRENT' | translate) }}
+                </span>
+                <span class="meta-badge meta-badge--location">
+                  {{ edu.locationKey | translate }}
+                </span>
+              </div>
+            </div>
+
+            <button
+              class="timeline-toggle"
+              (click)="toggleExpanded(edu.id); $event.stopPropagation()"
+              [attr.aria-expanded]="isExpanded(edu.id)"
+              [attr.aria-controls]="'details-' + edu.id"
+            >
+              @if (isExpanded(edu.id)) {
+                <span>{{ 'EDUCATION.HIDE_DETAILS' | translate }}</span>
+                <svg
+                  class="toggle-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  />
+                </svg>
+              } @else {
+                <span>{{ 'EDUCATION.SHOW_DETAILS' | translate }}</span>
+                <svg
+                  class="toggle-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              }
+            </button>
+
+            @if (isExpanded(edu.id)) {
+              <div class="timeline-details" [id]="'details-' + edu.id">
+                <p class="details-description">{{ edu.descriptionKey | translate }}</p>
+
+                <div class="details-highlights">
+                  <h4 class="highlights-title">{{ 'EDUCATION.HIGHLIGHTS_TITLE' | translate }}</h4>
+                  <ul class="highlights-list">
+                    @for (highlightKey of edu.highlightKeys; track highlightKey) {
+                      <li class="highlight-item">
+                        <span class="highlight-bullet" aria-hidden="true">→</span>
+                        {{ highlightKey | translate }}
+                      </li>
+                    }
+                  </ul>
+                </div>
+              </div>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

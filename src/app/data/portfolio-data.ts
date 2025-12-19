@@ -58,6 +58,25 @@ export interface Profile {
   readonly socialLinks: readonly SocialLink[];
 }
 
+export interface Education {
+  readonly id: string;
+  readonly institution: string; // Fallback
+  readonly institutionKey: string; // Translation key
+  readonly institutionLogo?: string;
+  readonly degree: string; // Fallback
+  readonly degreeKey: string; // Translation key
+  readonly field: string; // Fallback
+  readonly fieldKey: string; // Translation key
+  readonly startDate: string;
+  readonly endDate?: string;
+  readonly location: string; // Fallback
+  readonly locationKey: string; // Translation key
+  readonly description: string; // Fallback
+  readonly descriptionKey: string; // Translation key
+  readonly highlights: readonly string[]; // Fallback
+  readonly highlightKeys: readonly string[]; // Translation keys
+}
+
 // ===== Portfolio Data =====
 
 export const PROFILE: Profile = {
@@ -220,6 +239,53 @@ export const PROJECTS: readonly Project[] = [
     githubUrl: 'https://github.com/brenobarbosa/design-system',
     liveUrl: undefined,
     featured: false,
+  },
+] as const;
+
+export const EDUCATION: readonly Education[] = [
+  {
+    id: 'edu-1',
+    institution: 'Universidade Federal',
+    institutionKey: 'EDUCATION.INSTITUTIONS.FEDERAL_UNIVERSITY',
+    institutionLogo: undefined,
+    degree: 'Bachelor',
+    degreeKey: 'EDUCATION.DEGREES.BACHELOR',
+    field: 'Computer Science',
+    fieldKey: 'EDUCATION.FIELDS.COMPUTER_SCIENCE',
+    startDate: '2016-03',
+    endDate: '2020-12',
+    location: 'São Paulo, SP',
+    locationKey: 'EDUCATION.LOCATIONS.SAO_PAULO',
+    description: 'Bacharelado em Ciência da Computação com foco em engenharia de software.',
+    descriptionKey: 'EDUCATION.DESCRIPTIONS.EDU_1',
+    highlights: [
+      'TCC sobre Aprendizado de Máquina',
+      'Bolsista de Iniciação Científica',
+      'Projeto de extensão em tecnologia assistiva',
+    ],
+    highlightKeys: [
+      'EDUCATION.HIGHLIGHTS.EDU_1_H1',
+      'EDUCATION.HIGHLIGHTS.EDU_1_H2',
+      'EDUCATION.HIGHLIGHTS.EDU_1_H3',
+    ],
+  },
+  {
+    id: 'edu-2',
+    institution: 'MIT',
+    institutionKey: 'EDUCATION.INSTITUTIONS.MIT',
+    institutionLogo: undefined,
+    degree: 'Certificate',
+    degreeKey: 'EDUCATION.DEGREES.CERTIFICATE',
+    field: 'Machine Learning',
+    fieldKey: 'EDUCATION.FIELDS.MACHINE_LEARNING',
+    startDate: '2021-06',
+    endDate: '2021-12',
+    location: 'Online',
+    locationKey: 'EDUCATION.LOCATIONS.ONLINE',
+    description: 'Certificação profissional em Machine Learning e Data Science.',
+    descriptionKey: 'EDUCATION.DESCRIPTIONS.EDU_2',
+    highlights: ['Deep Learning com TensorFlow', 'Computer Vision aplicado'],
+    highlightKeys: ['EDUCATION.HIGHLIGHTS.EDU_2_H1', 'EDUCATION.HIGHLIGHTS.EDU_2_H2'],
   },
 ] as const;
 

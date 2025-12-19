@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NavbarComponent } from './components/navbar/navbar';
 import { HeroComponent } from './components/hero/hero';
 import { ExperienceComponent } from './components/experience/experience';
+import { EducationComponent } from './components/education/education';
 import { ProjectsComponent } from './components/projects/projects';
 import { FooterComponent } from './components/footer/footer';
 
@@ -13,6 +14,7 @@ import { FooterComponent } from './components/footer/footer';
     NavbarComponent,
     HeroComponent,
     ExperienceComponent,
+    EducationComponent,
     ProjectsComponent,
     FooterComponent,
   ],

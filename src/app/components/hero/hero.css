@@ -251,14 +251,14 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-  filter: brightness(0) saturate(100%) invert(70%) sepia(40%) saturate(600%) hue-rotate(80deg) brightness(1.1)
-    drop-shadow(0 0 2px var(--neon-primary));
+  filter: brightness(0) saturate(100%) invert(70%) sepia(40%) saturate(600%) hue-rotate(80deg)
+    brightness(1.1) drop-shadow(0 0 2px var(--neon-primary));
   transition: filter var(--transition-fast);
 }
 
 .tech-item:hover .tech-icon {
-  filter: brightness(0) saturate(100%) invert(75%) sepia(50%) saturate(800%) hue-rotate(80deg) brightness(1.2)
-    drop-shadow(0 0 4px var(--neon-primary));
+  filter: brightness(0) saturate(100%) invert(75%) sepia(50%) saturate(800%) hue-rotate(80deg)
+    brightness(1.2) drop-shadow(0 0 4px var(--neon-primary));
 }
 
 /* Scroll Indicator */

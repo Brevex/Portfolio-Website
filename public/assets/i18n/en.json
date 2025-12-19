@@ -80,5 +80,40 @@
     "OPEN_MENU": "Open navigation menu",
     "CLOSE_MENU": "Close menu",
     "GO_TO_START": "Go to start"
+  },
+  "EDUCATION": {
+    "SECTION_LABEL": "// Academic",
+    "SECTION_TITLE": "Education",
+    "SHOW_DETAILS": "Show details",
+    "HIDE_DETAILS": "Hide details",
+    "HIGHLIGHTS_TITLE": "Highlights",
+    "DEGREES": {
+      "BACHELOR": "Bachelor's Degree",
+      "MASTER": "Master's Degree",
+      "CERTIFICATE": "Certificate"
+    },
+    "FIELDS": {
+      "COMPUTER_SCIENCE": "Computer Science",
+      "MACHINE_LEARNING": "Machine Learning"
+    },
+    "INSTITUTIONS": {
+      "FEDERAL_UNIVERSITY": "Federal University",
+      "MIT": "MIT Professional Education"
+    },
+    "LOCATIONS": {
+      "SAO_PAULO": "São Paulo, SP",
+      "ONLINE": "Online"
+    },
+    "DESCRIPTIONS": {
+      "EDU_1": "Bachelor's degree in Computer Science with focus on software engineering and distributed systems.",
+      "EDU_2": "Professional certification in Machine Learning and Data Science."
+    },
+    "HIGHLIGHTS": {
+      "EDU_1_H1": "Thesis on Machine Learning",
+      "EDU_1_H2": "Research scholarship recipient",
+      "EDU_1_H3": "Assistive technology extension project",
+      "EDU_2_H1": "Deep Learning with TensorFlow",
+      "EDU_2_H2": "Applied Computer Vision"
+    }
   }
 }
