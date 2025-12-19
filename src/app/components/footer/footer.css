@@ -6,11 +6,7 @@
   box-shadow: 0 -5px 20px rgba(0, 255, 136, 0.1);
 }
 
-.footer::before {
-  content: '[ SYSTEM STATUS: ONLINE ]';
-  color: var(--neon-primary);
-  text-shadow: 0 0 10px var(--neon-primary);
-}
+/* Removed decorative overlay */
 
 .footer-content {
   display: flex;

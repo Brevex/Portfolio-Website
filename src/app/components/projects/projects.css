@@ -3,11 +3,7 @@
   background: var(--color-bg-primary);
 }
 
-.projects::before {
-  content: '[ DATA ARCHIVE ]';
-  color: var(--neon-primary);
-  text-shadow: 0 0 10px var(--neon-primary);
-}
+/* Removed decorative overlay */
 
 /* Section Header */
 .section-header {

@@ -5,7 +5,15 @@
         <span class="terminal-prompt">$</span> {{ 'HERO.GREETING' | translate }}
       </p>
       <h1 class="hero-name neon-green">{{ profile.name }}</h1>
-      <h2 class="hero-title">{{ 'HERO.TITLE' | translate }}</h2>
+
+      <!-- Typing Animation Title -->
+      <h2 class="hero-title" [class.typing-reset]="isTypingOut()">
+        <span class="typing-text" [attr.data-key]="animationKey()">{{
+          currentTitleKey() | translate
+        }}</span
+        ><span class="typing-cursor" aria-hidden="true">_</span>
+      </h2>
+
       <p class="hero-bio">{{ 'HERO.BIO' | translate }}</p>
 
       <div class="hero-cta">
@@ -44,6 +52,15 @@
       <div class="tech-grid">
         @for (tech of technologies; track tech.name) {
           <div class="tech-item" [title]="tech.name">
+            @if (tech.icon) {
+              <img
+                class="tech-icon"
+                [src]="'assets/icons/' + tech.icon + '.svg'"
+                [alt]="tech.name"
+                loading="lazy"
+                (error)="$any($event.target).style.display = 'none'"
+              />
+            }
             <span class="tech-name">{{ tech.name }}</span>
           </div>
         }

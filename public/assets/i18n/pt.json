@@ -7,6 +7,7 @@
   "HERO": {
     "GREETING": "Olá, eu sou",
     "TITLE": "Software Developer",
+    "TITLE_ALT": "Viciado em Café",
     "BIO": "Desenvolvedor apaixonado por criar soluções elegantes e performáticas. Especialista em aplicações web modernas com foco em experiência do usuário.",
     "TECH_LABEL": "// Tech Stack"
   },

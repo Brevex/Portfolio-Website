@@ -386,22 +386,6 @@ section {
   position: relative;
 }
 
-/* Section divider */
-section::before {
-  content: '────────────────────────────────────────';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: var(--font-primary);
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
-  opacity: 0.5;
-  overflow: hidden;
-  white-space: nowrap;
-  max-width: 90%;
-}
-
 /* ===== Scrollbar Styling - Tactical ===== */
 ::-webkit-scrollbar {
   width: 8px;

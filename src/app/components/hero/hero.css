@@ -60,6 +60,59 @@
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.15em;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+}
+
+/* Typing Animation - Typewriter Effect */
+.typing-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing-in 1s steps(25) forwards;
+}
+
+.typing-reset .typing-text {
+  animation: typing-out 0.3s steps(10) forwards;
+}
+
+.typing-cursor {
+  color: var(--neon-amber);
+  animation: cursor-blink 0.5s step-end infinite;
+  font-weight: 400;
+}
+
+/* Typing in - reveal text from left to right */
+@keyframes typing-in {
+  from {
+    max-width: 0;
+  }
+  to {
+    max-width: 25ch;
+  }
+}
+
+/* Typing out - hide text for transition */
+@keyframes typing-out {
+  from {
+    max-width: 25ch;
+    opacity: 1;
+  }
+  to {
+    max-width: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes cursor-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .hero-bio {
@@ -186,6 +239,19 @@
   color: var(--color-text-primary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+/* Tech Icons - Retro Filter */
+.tech-icon {
+  width: 16px;
+  height: 16px;
+  filter: grayscale(100%) sepia(100%) hue-rotate(80deg) brightness(1.5)
+    drop-shadow(0 0 2px var(--neon-primary));
+  transition: filter var(--transition-fast);
+}
+
+.tech-item:hover .tech-icon {
+  filter: grayscale(0%) brightness(1.2) drop-shadow(0 0 5px var(--neon-primary));
 }
 
 /* Scroll Indicator */

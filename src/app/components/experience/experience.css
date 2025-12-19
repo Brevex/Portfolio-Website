@@ -3,11 +3,7 @@
   background: var(--color-bg-secondary);
 }
 
-.experience::before {
-  content: '[ MISSION LOG ]';
-  color: var(--neon-primary);
-  text-shadow: 0 0 10px var(--neon-primary);
-}
+/* Removed decorative overlay */
 
 /* Section Header */
 .section-header {
