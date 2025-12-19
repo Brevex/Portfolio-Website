@@ -70,19 +70,20 @@
   border: 1px solid transparent;
   border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
-  position: relative;
   min-height: var(--touch-target);
   display: flex;
   align-items: center;
+  gap: var(--space-2);
+  overflow: hidden;
 }
 
 .nav-link::before {
   content: '>';
-  position: absolute;
-  left: -0.5em;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  flex-shrink: 0;
   opacity: 0;
-  color: var(--neon-primary);
-  transition: opacity var(--transition-fast);
+  transition: opacity var(--transition-fast), color var(--transition-fast);
 }
 
 .nav-link:hover {
@@ -94,6 +95,7 @@
 
 .nav-link:hover::before {
   opacity: 1;
+  color: var(--neon-primary);
 }
 
 /* Language Switcher in Nav */
