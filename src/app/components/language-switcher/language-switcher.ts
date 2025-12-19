@@ -23,25 +23,28 @@ import { LanguageService, SUPPORTED_LANGUAGES } from '../../services/language.se
       gap: var(--space-2);
       padding: var(--space-2) var(--space-3);
       min-height: var(--touch-target);
-      background: var(--color-bg-tertiary);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-md);
-      color: var(--color-text-primary);
-      font-family: var(--font-mono);
+      background: transparent;
+      border: var(--crt-border-dim);
+      border-radius: var(--radius-sm);
+      color: var(--neon-primary);
+      font-family: var(--font-primary);
       font-size: var(--text-sm);
       font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
       cursor: pointer;
+      text-shadow: 0 0 5px var(--neon-primary);
       transition: all var(--transition-fast);
     }
 
     .lang-switcher:hover {
-      background: var(--color-accent-green);
-      color: var(--color-bg-primary);
-      border-color: var(--color-accent-green);
+      border-color: var(--neon-primary);
+      box-shadow: var(--crt-glow-sm);
+      animation: glitch-box 0.15s ease-in-out;
     }
 
     .lang-flag {
-      font-size: 1.1em;
+      font-size: 1em;
     }
 
     .lang-code {
