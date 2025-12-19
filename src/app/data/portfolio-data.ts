@@ -81,12 +81,10 @@ export const PROFILE: Profile = {
 } as const;
 
 export const TECHNOLOGIES: readonly Technology[] = [
-  { name: 'Angular', icon: 'angular', color: '#dd0031' },
-  { name: 'TypeScript', icon: 'typescript', color: '#3178c6' },
-  { name: 'JavaScript', icon: 'javascript', color: '#f7df1e' },
   { name: 'Python', icon: 'python', color: '#3776ab' },
-  { name: 'Rust', icon: 'rust', color: '#dea584' },
-  { name: 'Node.js', icon: 'nodejs', color: '#339933' },
+  { name: 'Java', icon: 'java', color: '#f7df1e' },
+  { name: 'PyTorch', icon: 'pytorch', color: '#f7df1e' },
+  { name: 'OpenCV', icon: 'opencv', color: '#f7df1e' },
   { name: 'PostgreSQL', icon: 'postgresql', color: '#4169e1' },
   { name: 'Docker', icon: 'docker', color: '#2496ed' },
   { name: 'Git', icon: 'git', color: '#f05032' },

@@ -6,7 +6,6 @@
       </p>
       <h1 class="hero-name neon-green">{{ profile.name }}</h1>
 
-      <!-- Typing Animation Title -->
       <h2 class="hero-title" [class.typing-reset]="isTypingOut()">
         <span class="typing-text" [attr.data-key]="animationKey()">{{
           currentTitleKey() | translate

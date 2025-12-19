@@ -202,26 +202,28 @@
 
 .tech-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: var(--space-2);
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: var(--space-3);
 }
 
 .tech-item {
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  padding: var(--space-2) var(--space-3);
-  min-height: var(--touch-target);
+  padding: var(--space-3) var(--space-4);
+  min-height: 52px;
   background: var(--color-bg-card);
   border: 1px solid rgba(0, 255, 136, 0.2);
   border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
+  overflow: hidden;
 }
 
 .tech-item::before {
   content: '>';
   color: var(--color-text-muted);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
+  flex-shrink: 0;
 }
 
 .tech-item:hover {
@@ -235,23 +237,28 @@
 
 .tech-name {
   font-family: var(--font-primary);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   color: var(--color-text-primary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Tech Icons - Retro Filter */
+/* Tech Icons - Neon Glow Effect */
 .tech-icon {
-  width: 16px;
-  height: 16px;
-  filter: grayscale(100%) sepia(100%) hue-rotate(80deg) brightness(1.5)
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  filter: brightness(0) saturate(100%) invert(70%) sepia(40%) saturate(600%) hue-rotate(80deg) brightness(1.1)
     drop-shadow(0 0 2px var(--neon-primary));
   transition: filter var(--transition-fast);
 }
 
 .tech-item:hover .tech-icon {
-  filter: grayscale(0%) brightness(1.2) drop-shadow(0 0 5px var(--neon-primary));
+  filter: brightness(0) saturate(100%) invert(75%) sepia(50%) saturate(800%) hue-rotate(80deg) brightness(1.2)
+    drop-shadow(0 0 4px var(--neon-primary));
 }
 
 /* Scroll Indicator */
