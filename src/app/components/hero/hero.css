@@ -93,7 +93,7 @@
   .cta-button:hover {
     transform: none;
   }
-  
+
   .cta-button:active {
     background: var(--color-accent-green);
     color: var(--color-bg-primary);
@@ -191,7 +191,8 @@
 }
 
 @keyframes scroll-bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(-50%) translateY(0);
     opacity: 1;
   }

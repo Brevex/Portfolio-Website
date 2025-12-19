@@ -21,7 +21,7 @@
     </ul>
 
     <!-- Mobile Menu Button -->
-    <button 
+    <button
       class="menu-toggle"
       (click)="toggleMenu()"
       [attr.aria-expanded]="isMenuOpen()"
@@ -36,20 +36,25 @@
 </nav>
 
 <!-- Mobile Menu Overlay -->
-<div 
+<div
   id="mobile-menu"
   class="mobile-menu"
   [class.is-open]="isMenuOpen()"
   [attr.aria-hidden]="!isMenuOpen()"
 >
   <div class="mobile-menu-content">
-    <button 
+    <button
       class="mobile-menu-close"
       (click)="closeMenu()"
       [attr.aria-label]="'COMMON.CLOSE_MENU' | translate"
     >
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        />
       </svg>
     </button>
 
@@ -60,11 +65,7 @@
     <ul class="mobile-menu-links" role="list">
       @for (link of navLinks; track link.href) {
         <li>
-          <a 
-            [href]="link.href" 
-            class="mobile-nav-link"
-            (click)="closeMenu()"
-          >
+          <a [href]="link.href" class="mobile-nav-link" (click)="closeMenu()">
             {{ link.labelKey | translate }}
           </a>
         </li>

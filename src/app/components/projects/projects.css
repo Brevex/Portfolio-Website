@@ -103,7 +103,7 @@
   .project-card:hover {
     transform: none;
   }
-  
+
   .project-card:active {
     border-color: var(--color-accent-green);
   }

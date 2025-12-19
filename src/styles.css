@@ -147,7 +147,12 @@ a:hover {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-mono);
   font-weight: 600;
   line-height: var(--leading-tight);
@@ -173,7 +178,8 @@ button {
 }
 
 /* Lists */
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -185,7 +191,8 @@ ul, ol {
 
 /* Remove tap highlight on mobile */
 @media (hover: none) {
-  a, button {
+  a,
+  button {
     -webkit-tap-highlight-color: transparent;
   }
 }
@@ -258,7 +265,7 @@ section {
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
-  
+
   .hide-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -280,7 +287,9 @@ section {
   gap: var(--space-8);
   opacity: 0;
   visibility: hidden;
-  transition: opacity var(--transition-base), visibility var(--transition-base);
+  transition:
+    opacity var(--transition-base),
+    visibility var(--transition-base);
 }
 
 .menu-overlay.is-open {

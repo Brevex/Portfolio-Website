@@ -18,7 +18,7 @@ export class ProjectsComponent {
 
   protected readonly canScrollLeft = computed(() => this.currentIndex() > 0);
   protected readonly canScrollRight = computed(
-    () => this.currentIndex() < this.projects.length - 1
+    () => this.currentIndex() < this.projects.length - 1,
   );
 
   protected scrollLeft(): void {

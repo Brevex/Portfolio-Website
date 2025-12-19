@@ -2,13 +2,15 @@
   <div class="container">
     <header class="section-header">
       <span class="section-label">{{ 'EXPERIENCE.SECTION_LABEL' | translate }}</span>
-      <h2 id="experience-title" class="section-title">{{ 'EXPERIENCE.SECTION_TITLE' | translate }}</h2>
+      <h2 id="experience-title" class="section-title">
+        {{ 'EXPERIENCE.SECTION_TITLE' | translate }}
+      </h2>
     </header>
 
     <div class="timeline" role="list">
       @for (exp of experiences; track exp.id; let isLast = $last; let idx = $index) {
-        <article 
-          class="timeline-item" 
+        <article
+          class="timeline-item"
           [class.timeline-item--expanded]="isExpanded(exp.id)"
           [class.timeline-item--last]="isLast"
           role="listitem"
@@ -20,7 +22,13 @@
             }
           </div>
 
-          <div class="timeline-content" (click)="toggleExpanded(exp.id)">
+          <div
+            class="timeline-content"
+            (click)="toggleExpanded(exp.id)"
+            (keydown.enter)="toggleExpanded(exp.id)"
+            tabindex="0"
+            role="button"
+          >
             <div class="timeline-header">
               <div class="timeline-company">
                 <div class="company-avatar" aria-hidden="true">
@@ -34,7 +42,8 @@
 
               <div class="timeline-meta">
                 <span class="meta-badge meta-badge--date">
-                  {{ exp.startDate }} - {{ exp.endDate ? exp.endDate : ('EXPERIENCE.CURRENT' | translate) }}
+                  {{ exp.startDate }} -
+                  {{ exp.endDate ? exp.endDate : ('EXPERIENCE.CURRENT' | translate) }}
                 </span>
                 <span class="meta-badge meta-badge--location">
                   {{ exp.locationKey | translate }}
@@ -42,7 +51,7 @@
               </div>
             </div>
 
-            <button 
+            <button
               class="timeline-toggle"
               (click)="toggleExpanded(exp.id); $event.stopPropagation()"
               [attr.aria-expanded]="isExpanded(exp.id)"
@@ -50,22 +59,41 @@
             >
               @if (isExpanded(exp.id)) {
                 <span>{{ 'EXPERIENCE.HIDE_DETAILS' | translate }}</span>
-                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+                <svg
+                  class="toggle-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  />
                 </svg>
               } @else {
                 <span>{{ 'EXPERIENCE.SHOW_DETAILS' | translate }}</span>
-                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                <svg
+                  class="toggle-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
                 </svg>
               }
             </button>
 
             @if (isExpanded(exp.id)) {
-              <div 
-                class="timeline-details" 
-                [id]="'details-' + exp.id"
-              >
+              <div class="timeline-details" [id]="'details-' + exp.id">
                 <p class="details-description">{{ exp.descriptionKey | translate }}</p>
 
                 <div class="details-highlights">

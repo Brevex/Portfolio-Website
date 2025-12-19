@@ -15,16 +15,27 @@
         <ul class="social-links" role="list">
           @for (link of profile.socialLinks; track link.name) {
             <li>
-              <a 
-                [href]="link.url" 
-                target="_blank" 
+              <a
+                [href]="link.url"
+                target="_blank"
                 rel="noopener noreferrer"
                 class="social-link"
                 [attr.aria-label]="link.name"
               >
                 {{ link.name }}
-                <svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                <svg
+                  class="external-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
                 </svg>
               </a>
             </li>
@@ -32,8 +43,19 @@
           <li>
             <a [href]="'mailto:' + profile.email" class="social-link">
               {{ 'FOOTER.EMAIL' | translate }}
-              <svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              <svg
+                class="external-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
               </svg>
             </a>
           </li>
@@ -43,12 +65,12 @@
 
     <div class="footer-bottom">
       <p class="copyright">
-        {{ 'FOOTER.COPYRIGHT' | translate:copyrightParams }}
+        {{ 'FOOTER.COPYRIGHT' | translate: copyrightParams }}
       </p>
       <p class="made-with">
-        {{ 'FOOTER.MADE_WITH' | translate }} 
-        <span class="heart" aria-label="amor">❤</span> 
-        {{ 'FOOTER.AND' | translate }} 
+        {{ 'FOOTER.MADE_WITH' | translate }}
+        <span class="heart" aria-label="amor">❤</span>
+        {{ 'FOOTER.AND' | translate }}
         <span class="code" aria-label="código">Angular</span>
       </p>
     </div>
