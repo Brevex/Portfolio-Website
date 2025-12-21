@@ -116,22 +116,12 @@
   gap: var(--space-4);
 }
 
-.company-avatar {
+.company-logo {
   width: 44px;
   height: 44px;
-  background: var(--color-bg-tertiary);
-  border: var(--crt-border);
+  object-fit: contain;
   border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-primary);
-  font-size: var(--text-lg);
-  font-weight: 700;
-  color: var(--neon-primary);
-  text-shadow: 0 0 10px var(--neon-primary);
   flex-shrink: 0;
-  box-shadow: var(--crt-glow-sm);
 }
 
 .company-info {
@@ -231,6 +221,7 @@
     opacity: 0;
     transform: translateY(-4px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -285,6 +276,9 @@
 }
 
 .tech-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
   font-family: var(--font-primary);
   font-size: var(--text-xs);
   padding: var(--space-1) var(--space-2);
@@ -295,6 +289,13 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   text-shadow: 0 0 5px var(--neon-amber);
+}
+
+.tech-tag-icon {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  filter: brightness(0) saturate(100%) invert(70%) sepia(50%) saturate(600%) hue-rotate(5deg) brightness(1.1) drop-shadow(0 0 2px var(--neon-amber));
 }
 
 /* ===== Responsive ===== */
@@ -333,10 +334,9 @@
     gap: var(--space-3);
   }
 
-  .company-avatar {
+  .company-logo {
     width: 36px;
     height: 36px;
-    font-size: var(--text-base);
   }
 
   .company-role {

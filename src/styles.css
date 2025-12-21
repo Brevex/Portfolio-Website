@@ -133,14 +133,13 @@ body::before {
   inset: 0;
   z-index: var(--z-crt);
   pointer-events: none;
-  background: 
-    /* Scanlines */ repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 0, 0, 0.15) 2px,
-    rgba(0, 0, 0, 0.15) 4px
-  );
+  background:
+    /* Scanlines */
+    repeating-linear-gradient(0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.15) 2px,
+      rgba(0, 0, 0, 0.15) 4px);
   animation: crt-flicker 0.1s infinite;
 }
 
@@ -151,19 +150,19 @@ body::after {
   z-index: var(--z-crt);
   pointer-events: none;
   /* Vignette */
-  background: radial-gradient(
-    ellipse at center,
-    transparent 50%,
-    rgba(0, 0, 0, 0.4) 80%,
-    rgba(0, 0, 0, 0.8) 100%
-  );
+  background: radial-gradient(ellipse at center,
+      transparent 50%,
+      rgba(0, 0, 0, 0.4) 80%,
+      rgba(0, 0, 0, 0.8) 100%);
 }
 
 @keyframes crt-flicker {
+
   0%,
   100% {
     opacity: 0.98;
   }
+
   50% {
     opacity: 1;
   }
@@ -177,30 +176,35 @@ body::after {
       -2px 0 var(--neon-secondary),
       2px 0 var(--neon-cyan);
   }
+
   20% {
     transform: translate(-2px, 1px);
     text-shadow:
       2px 0 var(--neon-secondary),
       -2px 0 var(--neon-cyan);
   }
+
   40% {
     transform: translate(2px, -1px);
     text-shadow:
       -2px 0 var(--neon-cyan),
       2px 0 var(--neon-secondary);
   }
+
   60% {
     transform: translate(-1px, 2px);
     text-shadow:
       2px 0 var(--neon-cyan),
       -1px 0 var(--neon-secondary);
   }
+
   80% {
     transform: translate(1px, -2px);
     text-shadow:
       -2px 0 var(--neon-secondary),
       2px 0 var(--neon-cyan);
   }
+
   100% {
     transform: translate(0);
     text-shadow:
@@ -210,11 +214,13 @@ body::after {
 }
 
 @keyframes glitch-box {
+
   0%,
   100% {
     box-shadow: var(--crt-glow-sm);
     border-color: var(--neon-primary);
   }
+
   25% {
     box-shadow:
       -3px 0 0 var(--neon-secondary),
@@ -222,6 +228,7 @@ body::after {
       var(--crt-glow-sm);
     border-color: var(--neon-cyan);
   }
+
   50% {
     box-shadow:
       2px 0 0 var(--neon-cyan),
@@ -229,6 +236,7 @@ body::after {
       var(--crt-glow-sm);
     border-color: var(--neon-secondary);
   }
+
   75% {
     box-shadow:
       -2px 0 0 var(--neon-secondary),
@@ -239,10 +247,12 @@ body::after {
 }
 
 @keyframes terminal-blink {
+
   0%,
   49% {
     opacity: 1;
   }
+
   50%,
   100% {
     opacity: 0;
@@ -294,6 +304,11 @@ img {
   filter: brightness(1.1) contrast(1.1);
 }
 
+/* Exclude logos from global image filter */
+img.no-crt-effect {
+  filter: none;
+}
+
 /* Buttons - Tactical */
 button {
   font-family: var(--font-primary);
@@ -329,6 +344,7 @@ ol {
 
 /* Remove tap highlight on mobile */
 @media (hover: none) {
+
   a,
   button {
     -webkit-tap-highlight-color: transparent;

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { EXPERIENCES, formatDateRange } from '../../data/portfolio-data';
+import { EXPERIENCES, formatDateRange, ALL_TECH_ICONS } from '../../data/portfolio-data';
 
 @Component({
   selector: 'app-experience',
@@ -31,5 +31,9 @@ export class ExperienceComponent {
 
   protected isExpanded(id: string): boolean {
     return this.expandedItems().has(id);
+  }
+
+  protected getTechIcon(techName: string): string | undefined {
+    return ALL_TECH_ICONS.get(techName);
   }
 }

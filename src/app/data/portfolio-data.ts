@@ -111,12 +111,34 @@ export const TECHNOLOGIES: readonly Technology[] = [
   { name: 'Linux', icon: 'linux', color: '#fcc624' },
 ] as const;
 
+// Map for fast lookup of technologies by name (used in Hero)
+export const TECHNOLOGY_MAP: ReadonlyMap<string, Technology> = new Map(
+  TECHNOLOGIES.map(tech => [tech.name, tech])
+);
+
+// All available tech icons (for Experience/Project badges)
+// This includes all technologies that have icon assets available
+export const ALL_TECH_ICONS: ReadonlyMap<string, string> = new Map([
+  ['Python', 'python'],
+  ['Java', 'java'],
+  ['Spring', 'springboot'],
+  ['PyTorch', 'pytorch'],
+  ['OpenCV', 'opencv'],
+  ['PostgreSQL', 'postgresql'],
+  ['Docker', 'docker'],
+  ['Git', 'git'],
+  ['Linux', 'linux'],
+  ['Rust', 'rust'],
+  ['Angular', 'angular'],
+  ['YOLO', 'yolo'],
+]);
+
 export const EXPERIENCES: readonly Experience[] = [
   {
     id: 'exp-3',
     company: 'EXPERIENCE.COMPANIES.DELL',
     companyKey: 'EXPERIENCE.COMPANIES.DELL',
-    companyLogo: undefined,
+    companyLogo: 'assets/logos/imd.png',
     role: 'EXPERIENCE.ROLES.BACKEND_DEV',
     roleKey: 'EXPERIENCE.ROLES.BACKEND_DEV',
     type: 'full-time',
@@ -134,7 +156,7 @@ export const EXPERIENCES: readonly Experience[] = [
     id: 'exp-2',
     company: 'EXPERIENCE.COMPANIES.GUARARAPES',
     companyKey: 'EXPERIENCE.COMPANIES.GUARARAPES',
-    companyLogo: undefined,
+    companyLogo: 'assets/logos/imd.png',
     role: 'EXPERIENCE.ROLES.IA_DEV',
     roleKey: 'EXPERIENCE.ROLES.IA_DEV',
     type: 'full-time',
@@ -160,7 +182,7 @@ export const EXPERIENCES: readonly Experience[] = [
     id: 'exp-1',
     company: 'EXPERIENCE.COMPANIES.ICE',
     companyKey: 'EXPERIENCE.COMPANIES.ICE',
-    companyLogo: undefined,
+    companyLogo: 'assets/logos/Instituto_do_cerebro.png',
     role: 'EXPERIENCE.ROLES.IA_DEV',
     roleKey: 'EXPERIENCE.ROLES.IA_DEV',
     type: 'part-time',
@@ -189,7 +211,7 @@ export const EDUCATION: readonly Education[] = [
     id: 'edu-2',
     institution: 'EDUCATION.INSTITUTIONS.FEDERAL_UNIVERSITY',
     institutionKey: 'EDUCATION.INSTITUTIONS.FEDERAL_UNIVERSITY',
-    institutionLogo: undefined,
+    institutionLogo: 'assets/logos/ufrn.png',
     degree: 'EDUCATION.DEGREES.BACHELOR',
     degreeKey: 'EDUCATION.DEGREES.BACHELOR',
     field: 'EDUCATION.FIELDS.COMPUTER_SCIENCE',
@@ -213,7 +235,7 @@ export const EDUCATION: readonly Education[] = [
     id: 'edu-1',
     institution: 'EDUCATION.INSTITUTIONS.FEDERAL_UNIVERSITY',
     institutionKey: 'EDUCATION.INSTITUTIONS.FEDERAL_UNIVERSITY',
-    institutionLogo: undefined,
+    institutionLogo: 'assets/logos/ufrn.png',
     degree: 'EDUCATION.DEGREES.BACHELOR',
     degreeKey: 'EDUCATION.DEGREES.BACHELOR',
     field: 'EDUCATION.FIELDS.IT',

@@ -22,9 +22,8 @@
           tabindex="0" role="button">
           <div class="timeline-header">
             <div class="timeline-company">
-              <div class="company-avatar" aria-hidden="true">
-                {{ exp.company.charAt(0) }}
-              </div>
+              <img class="company-logo no-crt-effect" [src]="exp.companyLogo" [alt]="exp.companyKey | translate"
+                loading="lazy" />
               <div class="company-info">
                 <h3 class="company-role">{{ exp.roleKey | translate }}</h3>
                 <p class="company-name">{{ exp.companyKey | translate }}</p>
@@ -75,7 +74,12 @@
 
             <div class="details-tech">
               @for (tech of exp.technologies; track tech) {
-              <span class="tech-tag">{{ tech }}</span>
+              <span class="tech-tag">
+                @if (getTechIcon(tech); as icon) {
+                <img class="tech-tag-icon" [src]="'assets/icons/' + icon + '.svg'" [alt]="tech" />
+                }
+                {{ tech }}
+              </span>
               }
             </div>
           </div>

@@ -114,22 +114,12 @@
   gap: var(--space-4);
 }
 
-.institution-avatar {
+.institution-logo {
   width: 44px;
   height: 44px;
-  background: var(--color-bg-tertiary);
-  border: 1px solid var(--neon-cyan);
+  object-fit: contain;
   border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-primary);
-  font-size: var(--text-lg);
-  font-weight: 700;
-  color: var(--neon-cyan);
-  text-shadow: 0 0 10px var(--neon-cyan);
   flex-shrink: 0;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
 }
 
 .institution-info {
@@ -229,6 +219,7 @@
     opacity: 0;
     transform: translateY(-4px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -311,10 +302,9 @@
     gap: var(--space-3);
   }
 
-  .institution-avatar {
+  .institution-logo {
     width: 36px;
     height: 36px;
-    font-size: var(--text-base);
   }
 
   .institution-degree {

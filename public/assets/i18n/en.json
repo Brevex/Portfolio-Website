@@ -2,6 +2,7 @@
   "NAV": {
     "EXPERIENCE": "Experience",
     "PROJECTS": "Projects",
+    "EDUCATION": "Education",
     "CONTACT": "Contact"
   },
   "HERO": {
@@ -28,7 +29,7 @@
       "ICE": "Brain Institute"
     },
     "LOCATIONS": {
-      "REMOTE": "Remote",
+      "REMOTE": "Home Office",
       "NATAL": "Natal, RN"
     },
     "DESCRIPTIONS": {
