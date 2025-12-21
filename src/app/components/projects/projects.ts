@@ -13,12 +13,18 @@ import { PROJECTS, type Project } from '../../data/portfolio-data';
 export class ProjectsComponent {
   protected readonly projects = PROJECTS;
 
+  // Number of visible cards on desktop
+  private readonly visibleCount = 3;
+
   // Carousel state
   protected readonly currentIndex = signal(0);
 
+  // Show carousel controls only when there are more projects than visible
+  protected readonly needsCarousel = computed(() => this.projects.length > this.visibleCount);
+
   protected readonly canScrollLeft = computed(() => this.currentIndex() > 0);
   protected readonly canScrollRight = computed(
-    () => this.currentIndex() < this.projects.length - 1,
+    () => this.needsCarousel() && this.currentIndex() < this.projects.length - this.visibleCount,
   );
 
   protected scrollLeft(): void {

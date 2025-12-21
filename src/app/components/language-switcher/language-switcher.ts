@@ -12,7 +12,12 @@ import { LanguageService, SUPPORTED_LANGUAGES } from '../../services/language.se
       [attr.aria-label]="'Switch to ' + nextLanguage().name"
       type="button"
     >
-      <span class="lang-flag" aria-hidden="true">{{ languageService.currentLanguage().flag }}</span>
+      <img 
+        class="lang-flag" 
+        [src]="languageService.currentLanguage().flag" 
+        [alt]="languageService.currentLanguage().name"
+        aria-hidden="true" 
+      />
       <span class="lang-code">{{ languageService.currentLanguage().code.toUpperCase() }}</span>
     </button>
   `,
@@ -44,7 +49,11 @@ import { LanguageService, SUPPORTED_LANGUAGES } from '../../services/language.se
     }
 
     .lang-flag {
-      font-size: 1em;
+      width: 20px;
+      height: 14px;
+      object-fit: cover;
+      border-radius: 2px;
+      filter: none;
     }
 
     .lang-code {
@@ -53,7 +62,10 @@ import { LanguageService, SUPPORTED_LANGUAGES } from '../../services/language.se
 
     @media (max-width: 767px) {
       .lang-switcher {
-        padding: var(--space-2);
+        width: var(--touch-target);
+        height: var(--touch-target);
+        padding: 0;
+        justify-content: center;
       }
 
       .lang-code {

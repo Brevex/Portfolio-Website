@@ -30,15 +30,10 @@
               </div>
             </div>
 
-            <div class="timeline-meta">
-              <span class="meta-badge meta-badge--date">
-                {{ exp.startDate }} -
-                {{ exp.endDate ? (exp.endDate | translate) : ('EXPERIENCE.CURRENT' | translate) }}
-              </span>
-              <span class="meta-badge meta-badge--location">
-                {{ exp.locationKey | translate }}
-              </span>
-            </div>
+            <span class="meta-badge meta-badge--date">
+              {{ exp.startDate }} -
+              {{ exp.endDate ? (exp.endDate | translate) : ('EXPERIENCE.CURRENT' | translate) }}
+            </span>
           </div>
 
           <button class="timeline-toggle" (click)="toggleExpanded(exp.id); $event.stopPropagation()"

@@ -14,8 +14,8 @@ export interface Language {
 }
 
 export const SUPPORTED_LANGUAGES: readonly Language[] = [
-  { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'pt', name: 'Português', flag: '🇧🇷' },
+  { code: 'en', name: 'English', flag: 'assets/flags/us.svg' },
+  { code: 'pt', name: 'Português', flag: 'assets/flags/br.svg' },
 ] as const;
 
 const STORAGE_KEY = 'portfolio_lang';
