@@ -5,10 +5,10 @@
     "CONTACT": "Contact"
   },
   "HERO": {
-    "GREETING": "Hello, I'm",
+    "GREETING": "Hi, I'm",
     "TITLE": "Software Developer",
-    "TITLE_ALT": "Addicted to Coffee",
-    "BIO": "Developer passionate about creating elegant and performant solutions. Specialist in modern web applications focused on user experience.",
+    "TITLE_ALT": "Coffee Addict",
+    "BIO": "Developer specialized in integrating AI into enterprise back-end systems. I love cats, drawing, and technology.",
     "TECH_LABEL": "// Tech Stack"
   },
   "EXPERIENCE": {
@@ -19,35 +19,31 @@
     "HIDE_DETAILS": "Hide details",
     "HIGHLIGHTS_TITLE": "Highlights",
     "ROLES": {
-      "SENIOR_DEV": "Senior Software Developer",
-      "FULLSTACK_DEV": "Full Stack Developer",
-      "FRONTEND_DEV": "Frontend Developer"
+      "BACKEND_DEV": "Back-end Developer",
+      "IA_DEV": "AI Developer"
     },
     "COMPANIES": {
-      "TECH_COMPANY": "Tech Company",
-      "STARTUP_XYZ": "Startup XYZ",
-      "DIGITAL_AGENCY": "Digital Agency"
+      "DELL": "IMD / DELL Technologies",
+      "GUARARAPES": "IMD / Riachuelo Group",
+      "ICE": "Brain Institute"
     },
     "LOCATIONS": {
       "REMOTE": "Remote",
-      "SAO_PAULO": "São Paulo, SP",
-      "RIO": "Rio de Janeiro, RJ"
+      "NATAL": "Natal, RN"
     },
     "DESCRIPTIONS": {
-      "EXP_1": "Technical leadership in developing scalable web applications using Angular and Node.js. Responsible for micro-frontend architecture and DevOps practices implementation.",
-      "EXP_2": "Development of SaaS platform for business management. Full stack with Angular on frontend and Python/FastAPI on backend.",
-      "EXP_3": "Development of websites and web applications for diverse clients. Focus on performance, accessibility and SEO."
+      "EXP_1": "Developed and integrated AI models for detecting and classifying behavioral patterns in complex environments into a web system focused on providing ready-to-use AI models for various scientific research laboratories.",
+      "EXP_2": "In a partnership between Instituto Metrópole Digital (IMD) and Riachuelo Group, I worked on developing a sophisticated real-time fault detection system using AI and computer vision, applying cutting-edge technologies to the field of industrial automation in the textile sector.",
+      "EXP_3": "In a partnership between Instituto Metrópole Digital (IMD) and DELL Technologies, I rebuilt critical applications for Dell's operations, focusing on performance and security for internal processes of development teams across multiple countries."
     },
     "HIGHLIGHTS": {
-      "EXP_1_H1": "Reduced build time by 40% with bundling optimizations",
-      "EXP_1_H2": "Implemented CI/CD pipeline with GitHub Actions",
-      "EXP_1_H3": "Mentored junior developers",
-      "EXP_2_H1": "Developed multi-tenant authentication system",
-      "EXP_2_H2": "Created reusable component library",
-      "EXP_2_H3": "Payment API integration",
-      "EXP_3_H1": "Delivered over 20 client projects",
-      "EXP_3_H2": "Implemented WCAG 2.1 accessibility practices",
-      "EXP_3_H3": "Core Web Vitals optimization"
+      "EXP_1_H1": "Worked in a multidisciplinary team focused on scientific research and development.",
+      "EXP_1_H2": "Served as the bridge between scientists and developers.",
+      "EXP_1_H3": "Worked with state-of-the-art technologies in the field of computing.",
+      "EXP_2_H1": "Automated fault detection processes with high accuracy.",
+      "EXP_2_H2": "Increased worker productivity through automated systems.",
+      "EXP_2_H3": "Significant reduction in operational costs.",
+      "EXP_3_H1": "Global scope project."
     }
   },
   "PROJECTS": {
@@ -57,16 +53,14 @@
     "VIEW_GITHUB": "GitHub",
     "VIEW_DEMO": "Demo",
     "TITLES": {
-      "PROJ_1": "Forensic CLI",
-      "PROJ_2": "Analytics Dashboard",
-      "PROJ_3": "API Gateway",
-      "PROJ_4": "Design System"
+      "PROJ_1": "Argos",
+      "PROJ_2": "Paint Match AI",
+      "PROJ_3": "Smart Parking System"
     },
     "DESCRIPTIONS": {
-      "PROJ_1": "Command-line tool in Rust for data analysis and recovery on file systems. Multi-format support optimized for performance.",
-      "PROJ_2": "Real-time dashboard for metrics and KPI visualization. Built with Angular and WebSockets for instant updates.",
-      "PROJ_3": "API Gateway with rate limiting, caching and JWT authentication. Developed in Node.js focused on high availability.",
-      "PROJ_4": "Reusable UI component library with Storybook documentation and automated tests."
+      "PROJ_1": "A command-line tool written in Rust for data analysis and recovery, specialized in images even after formatting. Currently supports Linux only.",
+      "PROJ_2": "Chatbot specialized in paint recommendations and generating simulation images of house painting using Google AI.",
+      "PROJ_3": "Parking lot management system with ESP32 and AI for vehicle license plate detection."
     }
   },
   "FOOTER": {
@@ -79,41 +73,36 @@
   "COMMON": {
     "OPEN_MENU": "Open navigation menu",
     "CLOSE_MENU": "Close menu",
-    "GO_TO_START": "Go to start"
+    "GO_TO_START": "Go to top"
   },
   "EDUCATION": {
-    "SECTION_LABEL": "// Academic",
-    "SECTION_TITLE": "Education",
+    "SECTION_LABEL": "// Education",
+    "SECTION_TITLE": "Academic Background",
     "SHOW_DETAILS": "Show details",
     "HIDE_DETAILS": "Hide details",
     "HIGHLIGHTS_TITLE": "Highlights",
     "DEGREES": {
-      "BACHELOR": "Bachelor's Degree",
-      "MASTER": "Master's Degree",
-      "CERTIFICATE": "Certificate"
+      "BACHELOR": "Bachelor's Degree"
     },
     "FIELDS": {
       "COMPUTER_SCIENCE": "Computer Science",
-      "MACHINE_LEARNING": "Machine Learning"
+      "IT": "Information Technology"
     },
     "INSTITUTIONS": {
-      "FEDERAL_UNIVERSITY": "Federal University",
-      "MIT": "MIT Professional Education"
+      "FEDERAL_UNIVERSITY": "Federal University of Rio Grande do Norte"
     },
     "LOCATIONS": {
-      "SAO_PAULO": "São Paulo, SP",
-      "ONLINE": "Online"
+      "NATAL": "Natal, RN"
     },
     "DESCRIPTIONS": {
-      "EDU_1": "Bachelor's degree in Computer Science with focus on software engineering and distributed systems.",
-      "EDU_2": "Professional certification in Machine Learning and Data Science."
+      "EDU_1": "Graduate program where I learned the fundamentals of computing and software development. Focus on data structures, algorithms, networks, and object-oriented programming. Covered advanced topics such as machine learning, concurrent programming, and IoT.",
+      "EDU_2": "Graduate program where I deepened my knowledge in Computer Science. Focus on advanced programming concepts, complex algorithms, compilers, machine learning, and real-time processing."
     },
     "HIGHLIGHTS": {
-      "EDU_1_H1": "Thesis on Machine Learning",
-      "EDU_1_H2": "Research scholarship recipient",
-      "EDU_1_H3": "Assistive technology extension project",
-      "EDU_2_H1": "Deep Learning with TensorFlow",
-      "EDU_2_H2": "Applied Computer Vision"
+      "EDU_1_H1": "Extension projects in AI and computer vision applied to Back-end.",
+      "EDU_1_H2": "Undergraduate research in AI for behavioral pattern recognition.",
+      "EDU_2_H1": "Extension projects in AI applied to Back-end for natural language processing.",
+      "EDU_2_H2": "Extension projects in AI and real-time image processing."
     }
   }
 }
