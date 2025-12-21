@@ -44,8 +44,8 @@
 
               <div class="timeline-meta">
                 <span class="meta-badge meta-badge--date">
-                  {{ edu.startDate }} -
-                  {{ edu.endDate ? edu.endDate : ('EXPERIENCE.CURRENT' | translate) }}
+                  {{ edu.startDate | translate }} -
+                  {{ edu.endDate ? (edu.endDate | translate) : ('EXPERIENCE.CURRENT' | translate) }}
                 </span>
                 <span class="meta-badge meta-badge--location">
                   {{ edu.locationKey | translate }}

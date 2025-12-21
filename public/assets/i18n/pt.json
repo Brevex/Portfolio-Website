@@ -8,7 +8,7 @@
     "GREETING": "Olá, eu sou",
     "TITLE": "Software Developer",
     "TITLE_ALT": "Viciado em Café",
-    "BIO": "Desenvolvedor apaixonado por criar soluções elegantes e performáticas. Especialista em aplicações web modernas com foco em experiência do usuário.",
+    "BIO": "Desenvolvedor especializado na integração de IA em sistemas back-end empresariais. Gosto de gatos, desenho e tecnologia.",
     "TECH_LABEL": "// Tech Stack"
   },
   "EXPERIENCE": {
@@ -19,35 +19,31 @@
     "HIDE_DETAILS": "Esconder detalhes",
     "HIGHLIGHTS_TITLE": "Destaques",
     "ROLES": {
-      "SENIOR_DEV": "Senior Software Developer",
-      "FULLSTACK_DEV": "Full Stack Developer",
-      "FRONTEND_DEV": "Frontend Developer"
+      "BACKEND_DEV": "Desenvolvedor Back-end",
+      "IA_DEV": "Desenvolvedor de IA"
     },
     "COMPANIES": {
-      "TECH_COMPANY": "Tech Company",
-      "STARTUP_XYZ": "Startup XYZ",
-      "DIGITAL_AGENCY": "Agência Digital"
+      "DELL": "IMD / DELL Technologies",
+      "GUARARAPES": "IMD / Grupo Riachuelo",
+      "ICE": "Instituto do Cérebro"
     },
     "LOCATIONS": {
       "REMOTE": "Remoto",
-      "SAO_PAULO": "São Paulo, SP",
-      "RIO": "Rio de Janeiro, RJ"
+      "NATAL": "Natal, RN"
     },
     "DESCRIPTIONS": {
-      "EXP_1": "Liderança técnica no desenvolvimento de aplicações web escaláveis utilizando Angular e Node.js. Responsável pela arquitetura de micro-frontends e implementação de práticas DevOps.",
-      "EXP_2": "Desenvolvimento de plataforma SaaS para gestão empresarial. Stack completa com Angular no frontend e Python/FastAPI no backend.",
-      "EXP_3": "Desenvolvimento de sites e aplicações web para clientes diversos. Foco em performance, acessibilidade e SEO."
+      "EXP_1": "Desenvolvi e integrei modelos de IA para detecção e classificação de padrões comportamentais em ambientes complexos a um sistema web focado na disponibilização de modelos prontos de IA para diferentes laboratórios de pesquisa científica.",
+      "EXP_2": "Em uma parceria do Instituto Metrópole Digital (IMD) com o Grupo Riachuelo, atuei no desenvolvimento de um sistema sofisticado de detecção de falhas em tempo real utilizando IA e visão computacional, aplicando tecnologias de ponta para o campo da automação industrial na área têxtil.",
+      "EXP_3": "Em uma parceria do Instituto Metrópole Digital (IMD) com a DELL Technologies, atuei reconstruindo aplicações críticas para as operações da Dell, com foco em performance e segurança para processos internos de equipes de desenvolvimento em diversos países."
     },
     "HIGHLIGHTS": {
-      "EXP_1_H1": "Reduziu tempo de build em 40% com otimizações de bundling",
-      "EXP_1_H2": "Implementou CI/CD pipeline com GitHub Actions",
-      "EXP_1_H3": "Mentoria de desenvolvedores júnior",
-      "EXP_2_H1": "Desenvolveu sistema de autenticação multi-tenant",
-      "EXP_2_H2": "Criou biblioteca de componentes reutilizáveis",
-      "EXP_2_H3": "Integração com APIs de pagamento",
-      "EXP_3_H1": "Entregou mais de 20 projetos para clientes",
-      "EXP_3_H2": "Implementou práticas de acessibilidade WCAG 2.1",
-      "EXP_3_H3": "Otimização Core Web Vitals"
+      "EXP_1_H1": "Trabalho em equipe multidisciplinar voltada a pesquisa e desenvolvimento científico.",
+      "EXP_1_H2": "Atuei como elo entre os cientistas e os desenvolvedores.",
+      "EXP_1_H3": "Atuei com tecnologias em estado da arte para o campo da computação.",
+      "EXP_2_H1": "Automatização de processos de detecção de falhas com alta acurácia.",
+      "EXP_2_H2": "Aumento da produtividade dos operários com sistema automatizado.",
+      "EXP_2_H3": "Redução significativa de custos de operação.",
+      "EXP_3_H1": "Projeto de escopo global."
     }
   },
   "PROJECTS": {
@@ -57,16 +53,14 @@
     "VIEW_GITHUB": "GitHub",
     "VIEW_DEMO": "Demo",
     "TITLES": {
-      "PROJ_1": "CLI Forense",
-      "PROJ_2": "Dashboard Analytics",
-      "PROJ_3": "API Gateway",
-      "PROJ_4": "Design System"
+      "PROJ_1": "Argos",
+      "PROJ_2": "Paint Match AI",
+      "PROJ_3": "Smart Parking System"
     },
     "DESCRIPTIONS": {
-      "PROJ_1": "Ferramenta de linha de comando em Rust para análise e recuperação de dados em sistemas de arquivos. Suporte a múltiplos formatos e otimizada para performance.",
-      "PROJ_2": "Dashboard em tempo real para visualização de métricas e KPIs. Construído com Angular e WebSockets para atualizações instantâneas.",
-      "PROJ_3": "Gateway de API com rate limiting, caching e autenticação JWT. Desenvolvido em Node.js com foco em alta disponibilidade.",
-      "PROJ_4": "Biblioteca de componentes UI reutilizáveis com documentação Storybook e testes automatizados."
+      "PROJ_1": "Ferramenta de linha de comando em Rust para análise e recuperação de dados especializado em imagens mesmo após formatação. No momento conta com suporte apenas para linux.",
+      "PROJ_2": "Chatbot especializado na recomendação de tintas e geração de imagens de simulação de pintura em casas com Google AI.",
+      "PROJ_3": "Sistema de gerenciamento de estacionamentos com ESP32 e IA para detecção de placas de veículos."
     }
   },
   "FOOTER": {
@@ -88,32 +82,27 @@
     "HIDE_DETAILS": "Esconder detalhes",
     "HIGHLIGHTS_TITLE": "Destaques",
     "DEGREES": {
-      "BACHELOR": "Bacharelado",
-      "MASTER": "Mestrado",
-      "CERTIFICATE": "Certificação"
+      "BACHELOR": "Bacharelado"
     },
     "FIELDS": {
       "COMPUTER_SCIENCE": "Ciência da Computação",
-      "MACHINE_LEARNING": "Machine Learning"
+      "IT": "Tecnologia da Informação"
     },
     "INSTITUTIONS": {
-      "FEDERAL_UNIVERSITY": "Universidade Federal",
-      "MIT": "MIT Professional Education"
+      "FEDERAL_UNIVERSITY": "Universidade Federal do Rio Grande do Norte"
     },
     "LOCATIONS": {
-      "SAO_PAULO": "São Paulo, SP",
-      "ONLINE": "Online"
+      "NATAL": "Natal, RN"
     },
     "DESCRIPTIONS": {
-      "EDU_1": "Bacharelado em Ciência da Computação com foco em engenharia de software e sistemas distribuídos.",
-      "EDU_2": "Certificação profissional em Machine Learning e Data Science."
+      "EDU_1": "Curso de primeiro ciclo onde aprendi as bases de computação e desenvolvimento de software. Foco em estrutura de dados, algoritmos, redes e programação orientada a objetos. Abordagem de tópicos mais avançados como aprendizado de máquina, programação concorrente e IoT. ",
+      "EDU_2": "Curso de segundo ciclo onde apronfundei meus conhecimentos em Ciência da Computação. Foco em conceitos avançados de programação, algoritmos complexos, compiladores, aprendizado de máquina e processamento em tempo real."
     },
     "HIGHLIGHTS": {
-      "EDU_1_H1": "TCC sobre Aprendizado de Máquina",
-      "EDU_1_H2": "Bolsista de Iniciação Científica",
-      "EDU_1_H3": "Projeto de extensão em tecnologia assistiva",
-      "EDU_2_H1": "Deep Learning com TensorFlow",
-      "EDU_2_H2": "Computer Vision aplicado"
+      "EDU_1_H1": "Projetos de extensão em IA e visão computacional aplicados a Back-end.",
+      "EDU_1_H2": "Iniciação científica em IA para reconhecimento de padrões comportamentais.",
+      "EDU_2_H1": "Projetos de extensão em IA aplicados a Back-end para processamento de linguagem natural.",
+      "EDU_2_H2": "Projetos de extensão em IA e processamento de imagens em tempo real."
     }
   }
 }
