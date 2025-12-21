@@ -188,7 +188,6 @@
   letter-spacing: 0.1em;
   min-height: var(--touch-target);
   padding: var(--space-2);
-  margin-left: calc(-1 * var(--space-2));
   border: 1px solid transparent;
   border-radius: var(--radius-sm);
   background: transparent;
@@ -316,7 +315,6 @@
     width: 100%;
     justify-content: center;
     border-color: var(--color-text-muted);
-    margin-left: 0;
   }
 }
 
