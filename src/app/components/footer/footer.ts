@@ -13,7 +13,7 @@ import { PROFILE, getCurrentYear } from '../../data/portfolio-data';
 export class FooterComponent {
   protected readonly profile = PROFILE;
   protected readonly currentYear = getCurrentYear();
-  protected readonly startYear = 2023;
+  protected readonly startYear = 2025;
 
   // Translation params for copyright
   protected readonly copyrightParams = {
