@@ -295,7 +295,8 @@
   width: 12px;
   height: 12px;
   flex-shrink: 0;
-  filter: brightness(0) saturate(100%) invert(70%) sepia(50%) saturate(600%) hue-rotate(5deg) brightness(1.1) drop-shadow(0 0 2px var(--neon-amber));
+  filter: brightness(0) saturate(100%) invert(70%) sepia(50%) saturate(600%) hue-rotate(5deg)
+    brightness(1.1) drop-shadow(0 0 2px var(--neon-amber));
 }
 
 /* ===== Responsive ===== */

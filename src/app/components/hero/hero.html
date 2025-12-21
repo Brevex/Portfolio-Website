@@ -57,7 +57,7 @@
                 [src]="'assets/icons/' + tech.icon + '.svg'"
                 [alt]="tech.name"
                 loading="lazy"
-                (error)="$any($event.target).style.display = 'none'"
+                (error)="handleImageError($event)"
               />
             }
             <span class="tech-name">{{ tech.name }}</span>

@@ -113,7 +113,7 @@ export const TECHNOLOGIES: readonly Technology[] = [
 
 // Map for fast lookup of technologies by name (used in Hero)
 export const TECHNOLOGY_MAP: ReadonlyMap<string, Technology> = new Map(
-  TECHNOLOGIES.map(tech => [tech.name, tech])
+  TECHNOLOGIES.map((tech) => [tech.name, tech]),
 );
 
 // All available tech icons (for Experience/Project badges)
@@ -150,7 +150,7 @@ export const EXPERIENCES: readonly Experience[] = [
     descriptionKey: 'EXPERIENCE.DESCRIPTIONS.EXP_3',
     highlights: ['EXPERIENCE.HIGHLIGHTS.EXP_3_H1'],
     highlightKeys: ['EXPERIENCE.HIGHLIGHTS.EXP_3_H1'],
-    technologies: ['Java', 'Spring', 'Angular', 'PostgreSQL', 'Docker', 'Git']
+    technologies: ['Java', 'Spring', 'Angular', 'PostgreSQL', 'Docker', 'Git'],
   },
   {
     id: 'exp-2',
@@ -176,7 +176,7 @@ export const EXPERIENCES: readonly Experience[] = [
       'EXPERIENCE.HIGHLIGHTS.EXP_2_H2',
       'EXPERIENCE.HIGHLIGHTS.EXP_2_H3',
     ],
-    technologies: ['Python', 'PyTorch', 'OpenCV', 'YOLO', 'Docker', 'Git']
+    technologies: ['Python', 'PyTorch', 'OpenCV', 'YOLO', 'Docker', 'Git'],
   },
   {
     id: 'exp-1',
@@ -202,7 +202,7 @@ export const EXPERIENCES: readonly Experience[] = [
       'EXPERIENCE.HIGHLIGHTS.EXP_1_H2',
       'EXPERIENCE.HIGHLIGHTS.EXP_1_H3',
     ],
-    technologies: ['Python', 'PyTorch', 'Java', 'Spring', 'PostgreSQL', 'Docker', 'Git']
+    technologies: ['Python', 'PyTorch', 'Java', 'Spring', 'PostgreSQL', 'Docker', 'Git'],
   },
 ] as const;
 
@@ -222,14 +222,8 @@ export const EDUCATION: readonly Education[] = [
     locationKey: 'EDUCATION.LOCATIONS.NATAL',
     description: 'EDUCATION.DESCRIPTIONS.EDU_2',
     descriptionKey: 'EDUCATION.DESCRIPTIONS.EDU_2',
-    highlights: [
-      'EDUCATION.HIGHLIGHTS.EDU_2_H1',
-      'EDUCATION.HIGHLIGHTS.EDU_2_H2',
-    ],
-    highlightKeys: [
-      'EDUCATION.HIGHLIGHTS.EDU_2_H1',
-      'EDUCATION.HIGHLIGHTS.EDU_2_H2',
-    ],
+    highlights: ['EDUCATION.HIGHLIGHTS.EDU_2_H1', 'EDUCATION.HIGHLIGHTS.EDU_2_H2'],
+    highlightKeys: ['EDUCATION.HIGHLIGHTS.EDU_2_H1', 'EDUCATION.HIGHLIGHTS.EDU_2_H2'],
   },
   {
     id: 'edu-1',
@@ -246,14 +240,8 @@ export const EDUCATION: readonly Education[] = [
     locationKey: 'EDUCATION.LOCATIONS.NATAL',
     description: 'EDUCATION.DESCRIPTIONS.EDU_1',
     descriptionKey: 'EDUCATION.DESCRIPTIONS.EDU_1',
-    highlights: [
-      'EDUCATION.HIGHLIGHTS.EDU_1_H1',
-      'EDUCATION.HIGHLIGHTS.EDU_1_H2',
-    ],
-    highlightKeys: [
-      'EDUCATION.HIGHLIGHTS.EDU_1_H1',
-      'EDUCATION.HIGHLIGHTS.EDU_1_H2',
-    ],
+    highlights: ['EDUCATION.HIGHLIGHTS.EDU_1_H1', 'EDUCATION.HIGHLIGHTS.EDU_1_H2'],
+    highlightKeys: ['EDUCATION.HIGHLIGHTS.EDU_1_H1', 'EDUCATION.HIGHLIGHTS.EDU_1_H2'],
   },
 ] as const;
 
@@ -293,7 +281,7 @@ export const PROJECTS: readonly Project[] = [
     githubUrl: 'https://github.com/Brevex/Smart-Parking-System.git',
     liveUrl: undefined,
     featured: true,
-  }
+  },
 ] as const;
 
 // ===== Helper Functions =====

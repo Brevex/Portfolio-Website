@@ -2,9 +2,28 @@
 
 <main id="main-content">
   <app-hero />
-  <app-experience />
-  <app-education />
-  <app-projects />
+
+  @defer (on viewport) {
+    <app-experience />
+  } @placeholder {
+    <section class="defer-placeholder" aria-hidden="true"></section>
+  }
+
+  @defer (on viewport) {
+    <app-education />
+  } @placeholder {
+    <section class="defer-placeholder" aria-hidden="true"></section>
+  }
+
+  @defer (on viewport) {
+    <app-projects />
+  } @placeholder {
+    <section class="defer-placeholder" aria-hidden="true"></section>
+  }
 </main>
 
-<app-footer />
+@defer (on viewport) {
+  <app-footer />
+} @placeholder {
+  <footer class="defer-placeholder" aria-hidden="true"></footer>
+}

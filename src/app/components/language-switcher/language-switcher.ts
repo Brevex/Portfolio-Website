@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { LanguageService, SUPPORTED_LANGUAGES } from '../../services/language.service';
 
 @Component({
@@ -12,11 +12,11 @@ import { LanguageService, SUPPORTED_LANGUAGES } from '../../services/language.se
       [attr.aria-label]="'Switch to ' + nextLanguage().name"
       type="button"
     >
-      <img 
-        class="lang-flag" 
-        [src]="languageService.currentLanguage().flag" 
+      <img
+        class="lang-flag"
+        [src]="languageService.currentLanguage().flag"
         [alt]="languageService.currentLanguage().name"
-        aria-hidden="true" 
+        aria-hidden="true"
       />
       <span class="lang-code">{{ languageService.currentLanguage().code.toUpperCase() }}</span>
     </button>
@@ -77,10 +77,10 @@ import { LanguageService, SUPPORTED_LANGUAGES } from '../../services/language.se
 export class LanguageSwitcherComponent {
   protected readonly languageService = inject(LanguageService);
 
-  protected nextLanguage() {
+  protected readonly nextLanguage = computed(() => {
     const currentCode = this.languageService.currentLanguage().code;
     const currentIndex = SUPPORTED_LANGUAGES.findIndex((l) => l.code === currentCode);
     const nextIndex = (currentIndex + 1) % SUPPORTED_LANGUAGES.length;
     return SUPPORTED_LANGUAGES[nextIndex];
-  }
+  });
 }

@@ -9,11 +9,11 @@
     <!-- Desktop Navigation -->
     <ul class="navbar-links navbar-links--desktop" role="list">
       @for (link of navLinks; track link.href) {
-      <li>
-        <a [href]="link.href" class="nav-link">
-          {{ link.labelKey | translate }}
-        </a>
-      </li>
+        <li>
+          <a [href]="link.href" class="nav-link">
+            {{ link.labelKey | translate }}
+          </a>
+        </li>
       }
       <li class="nav-lang">
         <app-language-switcher />
@@ -23,8 +23,13 @@
     <!-- Mobile Controls -->
     <div class="navbar-mobile-controls">
       <app-language-switcher />
-      <button class="menu-toggle" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen()" aria-controls="mobile-menu"
-        [attr.aria-label]="'COMMON.OPEN_MENU' | translate">
+      <button
+        class="menu-toggle"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="isMenuOpen()"
+        aria-controls="mobile-menu"
+        [attr.aria-label]="'COMMON.OPEN_MENU' | translate"
+      >
         <span class="menu-toggle-bar"></span>
         <span class="menu-toggle-bar"></span>
         <span class="menu-toggle-bar"></span>
@@ -34,23 +39,35 @@
 </nav>
 
 <!-- Mobile Menu Overlay -->
-<div id="mobile-menu" class="mobile-menu" [class.is-open]="isMenuOpen()" [attr.aria-hidden]="!isMenuOpen()">
+<div
+  id="mobile-menu"
+  class="mobile-menu"
+  [class.is-open]="isMenuOpen()"
+  [attr.aria-hidden]="!isMenuOpen()"
+>
   <div class="mobile-menu-content">
-    <button class="mobile-menu-close" (click)="closeMenu()" [attr.aria-label]="'COMMON.CLOSE_MENU' | translate">
+    <button
+      class="mobile-menu-close"
+      (click)="closeMenu()"
+      [attr.aria-label]="'COMMON.CLOSE_MENU' | translate"
+    >
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        />
       </svg>
     </button>
 
-
-
     <ul class="mobile-menu-links" role="list">
       @for (link of navLinks; track link.href) {
-      <li>
-        <a [href]="link.href" class="mobile-nav-link" (click)="closeMenu()">
-          {{ link.labelKey | translate }}
-        </a>
-      </li>
+        <li>
+          <a [href]="link.href" class="mobile-nav-link" (click)="closeMenu()">
+            {{ link.labelKey | translate }}
+          </a>
+        </li>
       }
     </ul>
 

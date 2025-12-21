@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { EXPERIENCES, formatDateRange, ALL_TECH_ICONS } from '../../data/portfolio-data';
+import { EXPERIENCES, ALL_TECH_ICONS } from '../../data/portfolio-data';
+import { createExpandableState } from '../../utils/expandable.util';
 
 @Component({
   selector: 'app-experience',
@@ -12,26 +13,10 @@ import { EXPERIENCES, formatDateRange, ALL_TECH_ICONS } from '../../data/portfol
 })
 export class ExperienceComponent {
   protected readonly experiences = EXPERIENCES;
-  protected readonly formatDateRange = formatDateRange;
 
-  // Track which experience items are expanded
-  protected readonly expandedItems = signal<Set<string>>(new Set());
-
-  protected toggleExpanded(id: string): void {
-    this.expandedItems.update((current) => {
-      const next = new Set(current);
-      if (next.has(id)) {
-        next.delete(id);
-      } else {
-        next.add(id);
-      }
-      return next;
-    });
-  }
-
-  protected isExpanded(id: string): boolean {
-    return this.expandedItems().has(id);
-  }
+  private readonly expandableState = createExpandableState();
+  protected readonly isExpanded = this.expandableState.isExpanded;
+  protected readonly toggleExpanded = this.expandableState.toggle;
 
   protected getTechIcon(techName: string): string | undefined {
     return ALL_TECH_ICONS.get(techName);
