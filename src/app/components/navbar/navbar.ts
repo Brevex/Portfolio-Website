@@ -16,8 +16,8 @@ export class NavbarComponent {
 
   protected readonly navLinks = [
     { labelKey: 'NAV.EXPERIENCE', href: '#experience' },
-    { labelKey: 'NAV.PROJECTS', href: '#projects' },
     { labelKey: 'NAV.EDUCATION', href: '#education' },
+    { labelKey: 'NAV.PROJECTS', href: '#projects' },
     { labelKey: 'NAV.CONTACT', href: '#footer' },
   ] as const;
 
