@@ -19,6 +19,6 @@ import { FooterComponent } from './components/footer/footer';
     FooterComponent,
   ],
   templateUrl: './app.html',
-  styleUrl: './app.css',
+  styleUrl: './app.scss',
 })
 export class App {}

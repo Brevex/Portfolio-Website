@@ -8,7 +8,7 @@ import { PROJECTS } from '../../data/portfolio-data';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [TranslateModule],
   templateUrl: './projects.html',
-  styleUrl: './projects.css',
+  styleUrl: './projects.scss',
 })
 export class ProjectsComponent {
   protected readonly projects = PROJECTS;

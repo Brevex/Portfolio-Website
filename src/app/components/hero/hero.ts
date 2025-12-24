@@ -20,7 +20,7 @@ const ANIMATION_CONFIG = {
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [TranslateModule],
   templateUrl: './hero.html',
-  styleUrl: './hero.css',
+  styleUrl: './hero.scss',
 })
 export class HeroComponent {
   private readonly destroyRef = inject(DestroyRef);

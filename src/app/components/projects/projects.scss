@@ -1,0 +1,208 @@
+// ===== Projects Section - Data Archive =====
+@use 'styles/mixins' as *;
+@use 'styles/placeholders' as *;
+
+.projects { background: var(--color-bg-primary); }
+
+// ===== Section Header =====
+.section-header {
+  @include flex-between(flex-end);
+  margin-bottom: var(--space-8);
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.section-header-content { @include flex-column(var(--space-2)); }
+.section-label { @include section-label; }
+.section-title { @include section-title; }
+
+// ===== Carousel Controls =====
+.carousel-controls { display: flex; gap: var(--space-2); }
+.carousel-btn {
+  @include icon-button;
+  @include icon-svg(20px);
+}
+
+// ===== Carousel Container =====
+.carousel {
+  overflow: hidden;
+  margin: 0 calc(-1 * var(--container-padding));
+  padding: 0 var(--container-padding);
+}
+
+.carousel-track {
+  display: flex;
+  gap: var(--space-5);
+  transition: transform 0.4s steps(10);
+}
+
+// ===== Project Card =====
+.project-card {
+  @include tactical-card;
+  @include flex-column;
+  flex: 0 0 calc(33.333% - var(--space-5) * 2 / 3);
+  min-width: 280px;
+  padding: var(--space-5);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon-primary), transparent);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+  }
+
+  &:hover {
+    border-color: var(--neon-primary);
+    box-shadow: var(--crt-glow-sm);
+    &::before { opacity: 1; }
+  }
+}
+
+// ===== Project Header =====
+.project-header { @include flex-between; }
+
+.project-icon {
+  @include flex-center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: var(--crt-border-dim);
+  border-radius: var(--radius-sm);
+  color: var(--neon-amber);
+  @include icon-svg(18px);
+}
+
+.project-badge { @include neon-badge(var(--neon-primary)); }
+
+// ===== Project Content =====
+.project-name {
+  @include terminal-text(0.05em);
+  font-size: var(--text-lg);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.project-description {
+  @extend %description-text;
+  flex: 1;
+}
+
+// ===== Tech Pills =====
+.project-tech { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.tech-pill { @include neon-badge(var(--neon-cyan)); padding: 2px var(--space-2); letter-spacing: 0.05em; }
+
+// ===== Project Actions =====
+.project-actions {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: var(--crt-border-dim);
+}
+
+.project-link {
+  @include flex-center;
+  @include terminal-text;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  padding: var(--space-2) var(--space-3);
+  min-height: var(--touch-target);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  flex: 1;
+  @include icon-svg(14px);
+
+  &--github {
+    background: transparent;
+    border: var(--crt-border-dim);
+    color: var(--color-text-primary);
+
+    &:hover {
+      border-color: var(--neon-primary);
+      color: var(--neon-primary);
+      box-shadow: var(--crt-glow-sm);
+      animation: glitch 0.15s ease-in-out;
+    }
+  }
+
+  &--live {
+    background: transparent;
+    border: 1px solid var(--neon-primary);
+    color: var(--neon-primary);
+    box-shadow: var(--crt-glow-sm);
+
+    &:hover {
+      background: var(--neon-primary);
+      color: var(--color-bg-primary);
+      text-shadow: none;
+    }
+  }
+}
+
+// ===== Carousel Dots =====
+.carousel-dots { @include flex-center; gap: var(--space-2); margin-top: var(--space-8); }
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  min-height: unset;
+  background: transparent;
+  border: 1px solid var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: 0;
+
+  &:hover { border-color: var(--neon-primary); }
+
+  &--active {
+    background: var(--neon-primary);
+    border-color: var(--neon-primary);
+    width: 20px;
+    box-shadow: 0 0 10px var(--neon-primary);
+  }
+}
+
+// ===== Responsive =====
+@include tablet {
+  .project-card { flex: 0 0 calc(50% - var(--space-5) / 2); min-width: 260px; }
+}
+
+@include mobile {
+  .carousel-controls { display: none; }
+
+  .carousel {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar { display: none; }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding-bottom: var(--space-2);
+  }
+
+  .carousel-track { transition: none; gap: var(--space-4); }
+
+  .project-card {
+    flex: 0 0 85%;
+    min-width: unset;
+    scroll-snap-align: center;
+    padding: var(--space-4);
+    &:first-child { margin-left: var(--container-padding); }
+    &:last-child { margin-right: var(--container-padding); }
+  }
+
+  .project-name { font-size: var(--text-base); }
+  .project-description { font-size: var(--text-xs); }
+  .project-actions { flex-direction: column; gap: var(--space-2); }
+  .project-link { width: 100%; }
+  .carousel-dots { margin-top: var(--space-6); }
+}
+
+@include small-mobile {
+  .project-card { flex: 0 0 90%; padding: var(--space-3); }
+}

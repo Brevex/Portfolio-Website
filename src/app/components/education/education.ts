@@ -9,7 +9,7 @@ import { createExpandableState } from '../../utils/expandable.util';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [TranslateModule],
   templateUrl: './education.html',
-  styleUrl: './education.css',
+  styleUrl: './education.scss',
 })
 export class EducationComponent {
   protected readonly education = EDUCATION;

@@ -1,0 +1,39 @@
+// ==============================
+// SCSS BREAKPOINTS - Portfolio
+// Media queries reutilizáveis
+// ==============================
+
+// ===== Breakpoint Variables =====
+$breakpoint-sm: 374px;
+$breakpoint-md: 767px;
+$breakpoint-lg: 1023px;
+
+// ===== Breakpoint Mixins =====
+
+// Mobile (até 767px)
+@mixin mobile {
+  @media (max-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+// Tablet (até 1023px)
+@mixin tablet {
+  @media (max-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+// Small mobile (até 374px)
+@mixin small-mobile {
+  @media (max-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+// Touch devices (hover: none)
+@mixin touch-device {
+  @media (hover: none) {
+    @content;
+  }
+}

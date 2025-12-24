@@ -8,7 +8,7 @@ import { PROFILE, getCurrentYear } from '../../data/portfolio-data';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [TranslateModule],
   templateUrl: './footer.html',
-  styleUrl: './footer.css',
+  styleUrl: './footer.scss',
 })
 export class FooterComponent {
   protected readonly profile = PROFILE;

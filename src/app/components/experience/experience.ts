@@ -9,7 +9,7 @@ import { createExpandableState } from '../../utils/expandable.util';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [TranslateModule],
   templateUrl: './experience.html',
-  styleUrl: './experience.css',
+  styleUrl: './experience.scss',
 })
 export class ExperienceComponent {
   protected readonly experiences = EXPERIENCES;

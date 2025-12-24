@@ -1,0 +1,97 @@
+// ==============================
+// TIMELINE SHARED STYLES
+// Usado por Experience e Education
+// ==============================
+
+@use 'mixins' as *;
+@use 'placeholders' as *;
+
+// ===== Variáveis do Tema =====
+// Definidas no componente que importa este arquivo
+// $timeline-color: cor primária do timeline
+// $timeline-hover-color: cor de hover (opcional)
+// $toggle-color: cor do botão toggle
+// $toggle-hover-color: cor hover do toggle
+
+// ===== Section Header =====
+.section-header {
+  margin-bottom: var(--space-10);
+
+  @include tablet {
+    margin-bottom: var(--space-8);
+  }
+}
+
+.section-label {
+  @include section-label;
+  display: block;
+  margin-bottom: var(--space-2);
+}
+
+.section-title {
+  @include section-title;
+}
+
+// ===== Timeline Container =====
+.timeline {
+  @include timeline-container;
+}
+
+// ===== Timeline Responsive =====
+@mixin timeline-responsive {
+  @include mobile {
+    .timeline-item {
+      grid-template-columns: 16px 1fr;
+      gap: var(--space-4);
+      padding-bottom: var(--space-6);
+    }
+
+    .timeline-dot {
+      width: 10px;
+      height: 10px;
+    }
+
+    .timeline-content {
+      padding: var(--space-4);
+    }
+
+    .timeline-header {
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .meta-badge--date {
+      align-self: flex-start;
+    }
+
+    .timeline-toggle {
+      width: 100%;
+      justify-content: center;
+      border-color: var(--color-text-muted);
+    }
+  }
+
+  @include small-mobile {
+    .timeline-item {
+      grid-template-columns: 12px 1fr;
+      gap: var(--space-3);
+    }
+
+    .meta-badge {
+      font-size: 0.6rem;
+      padding: 2px var(--space-1);
+    }
+  }
+}
+
+// ===== Keyframes =====
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

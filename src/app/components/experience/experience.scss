@@ -1,0 +1,106 @@
+// ===== Experience Section - Mission Log =====
+@use 'styles/mixins' as *;
+@use 'styles/placeholders' as *;
+
+// Cor do tema para este timeline
+$theme-color: var(--neon-primary);
+$theme-glow: var(--crt-glow);
+$toggle-base: var(--neon-cyan);
+
+.experience {
+  background: var(--color-bg-secondary);
+}
+
+// ===== Section Header =====
+.section-header { margin-bottom: var(--space-10); }
+.section-label { @include section-label; display: block; margin-bottom: var(--space-2); }
+.section-title { @include section-title; }
+
+// ===== Timeline =====
+.timeline { @include timeline-container; }
+
+.timeline-item {
+  @include timeline-item-base;
+
+  &--expanded {
+    .timeline-dot { background: $theme-color; box-shadow: $theme-glow; }
+    .timeline-content { border-color: $theme-color; box-shadow: var(--crt-glow-sm); }
+  }
+}
+
+.timeline-marker { @include timeline-marker; }
+.timeline-dot { @include timeline-dot($theme-color); }
+.timeline-line { @include timeline-line($theme-color); }
+
+.timeline-content {
+  @include timeline-content($theme-color);
+}
+
+// ===== Timeline Header =====
+.timeline-header { @include flex-between(flex-start); gap: var(--space-4); flex-wrap: wrap; }
+.timeline-company { display: flex; align-items: center; gap: var(--space-4); }
+.company-logo { @include entity-logo; }
+.company-info { @include timeline-entity-info; }
+.company-role { @include timeline-role; }
+.company-name { @include timeline-secondary-text; }
+
+// ===== Meta Badges =====
+.timeline-meta { display: flex; gap: var(--space-2); flex-wrap: wrap; margin-top: var(--space-2); }
+.meta-badge {
+  @include terminal-text(0.1em);
+  font-size: var(--text-xs);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+
+  &--date { @include neon-badge($theme-color); }
+  &--location { @include badge-muted; }
+}
+
+// ===== Toggle =====
+.timeline-toggle { @include timeline-toggle($toggle-base, $theme-color); }
+.toggle-icon { @include icon-size; }
+
+// ===== Details =====
+.timeline-details { @include timeline-details; }
+.details-description { @extend %description-text; margin-bottom: var(--space-5); }
+
+// ===== Highlights =====
+.details-highlights { margin-bottom: var(--space-5); }
+.highlights-title { @extend %small-title; margin-bottom: var(--space-3); }
+.highlights-list { @include highlights-list; }
+.highlight-item { @include highlight-item($theme-color); }
+.highlight-bullet { @include highlight-bullet($theme-color); }
+
+// ===== Tech Tags =====
+.details-tech { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.tech-tag {
+  @include neon-badge(var(--neon-amber));
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+.tech-tag-icon {
+  @include icon-size(12px);
+  filter: brightness(0) saturate(100%) invert(70%) sepia(50%) saturate(600%) hue-rotate(5deg)
+    brightness(1.1) drop-shadow(0 0 2px var(--neon-amber));
+}
+
+// ===== Responsive =====
+@include tablet { .section-header { margin-bottom: var(--space-8); } }
+
+@include mobile {
+  .timeline-item { grid-template-columns: 16px 1fr; gap: var(--space-4); padding-bottom: var(--space-6); }
+  .timeline-dot { width: 10px; height: 10px; }
+  .timeline-content { padding: var(--space-4); }
+  .timeline-header { flex-direction: column; gap: var(--space-3); }
+  .meta-badge--date { align-self: flex-start; }
+  .timeline-company { gap: var(--space-3); }
+  .company-logo { width: 36px; height: 36px; }
+  .company-role { font-size: var(--text-sm); }
+  .timeline-toggle { width: 100%; justify-content: center; border-color: var(--color-text-muted); }
+}
+
+@include small-mobile {
+  .timeline-item { grid-template-columns: 12px 1fr; gap: var(--space-3); }
+  .meta-badge { font-size: 0.6rem; padding: 2px var(--space-1); }
+}

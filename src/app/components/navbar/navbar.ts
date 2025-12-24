@@ -9,7 +9,7 @@ import { LanguageSwitcherComponent } from '../language-switcher/language-switche
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [TranslateModule, LanguageSwitcherComponent],
   templateUrl: './navbar.html',
-  styleUrl: './navbar.css',
+  styleUrl: './navbar.scss',
 })
 export class NavbarComponent {
   protected readonly profile = PROFILE;

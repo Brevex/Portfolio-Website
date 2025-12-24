@@ -1,0 +1,208 @@
+// ===== Hero - Terminal Boot Screen =====
+@use 'styles/mixins' as *;
+
+.hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  @include flex-column(0);
+  justify-content: center;
+  position: relative;
+  padding-top: var(--space-20);
+  padding-bottom: var(--space-10);
+
+  &::before { display: none; }
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.hero-text { @include flex-column; }
+
+.hero-greeting {
+  @include terminal-text;
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+}
+
+.terminal-prompt {
+  @include neon-text(var(--neon-primary));
+  margin-right: var(--space-2);
+  animation: terminal-blink 1s step-end infinite;
+}
+
+.hero-name {
+  font-size: var(--text-6xl);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  text-shadow: 0 0 10px var(--neon-primary), 0 0 20px var(--neon-primary), 0 0 40px rgba(0, 255, 136, 0.5);
+}
+
+.hero-title {
+  @include terminal-text(0.15em);
+  @include neon-text(var(--neon-amber));
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+}
+
+// ===== Typing Animation =====
+.typing-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing-in 1s steps(25) forwards;
+}
+
+.typing-reset .typing-text { animation: typing-out 0.3s steps(10) forwards; }
+
+.typing-cursor {
+  color: var(--neon-amber);
+  animation: cursor-blink 0.5s step-end infinite;
+  font-weight: 400;
+}
+
+@keyframes typing-in { from { max-width: 0; } to { max-width: 25ch; } }
+@keyframes typing-out { from { max-width: 25ch; opacity: 1; } to { max-width: 0; opacity: 0; } }
+@keyframes cursor-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+.hero-bio {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  max-width: 50ch;
+  border-left: 2px solid var(--neon-primary);
+  padding-left: var(--space-4);
+  box-shadow: -2px 0 10px rgba(0, 255, 136, 0.3);
+}
+
+// ===== CTA Buttons =====
+.hero-cta { display: flex; flex-wrap: wrap; gap: var(--space-4); margin-top: var(--space-4); }
+.cta-button { @include cta-button; }
+
+@media (hover: none) {
+  .cta-button:active { background: var(--neon-primary); color: var(--color-bg-primary); }
+}
+
+.cta-icon {
+  @include icon-size(18px);
+  display: flex;
+  @include icon-svg;
+}
+
+// ===== Tech Stack =====
+.hero-tech {
+  @include flex-column;
+  padding: var(--space-6);
+  border: var(--crt-border-dim);
+  border-radius: var(--radius-sm);
+  background: rgba(0, 255, 136, 0.02);
+}
+
+.tech-label { @include section-label; }
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: var(--space-3);
+}
+
+.tech-item {
+  @include tactical-card-interactive;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  min-height: 52px;
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  overflow: hidden;
+
+  &::before { content: '>'; color: var(--color-text-muted); font-size: var(--text-sm); flex-shrink: 0; }
+  &:hover::before { color: var(--neon-primary); }
+}
+
+.tech-name {
+  @include terminal-text(0.05em);
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tech-icon {
+  @include icon-size(20px);
+  filter: brightness(0) saturate(100%) invert(70%) sepia(40%) saturate(600%) hue-rotate(80deg) brightness(1.1) drop-shadow(0 0 2px var(--neon-primary));
+  transition: filter var(--transition-fast);
+}
+
+.tech-item:hover .tech-icon {
+  filter: brightness(0) saturate(100%) invert(75%) sepia(50%) saturate(800%) hue-rotate(80deg) brightness(1.2) drop-shadow(0 0 4px var(--neon-primary));
+}
+
+// ===== Scroll Indicator =====
+.hero-scroll { position: absolute; bottom: var(--space-8); left: 50%; transform: translateX(-50%); }
+
+.scroll-indicator {
+  display: block;
+  width: 20px;
+  height: 32px;
+  border: 2px solid var(--neon-primary);
+  border-radius: var(--radius-sm);
+  position: relative;
+  box-shadow: var(--crt-glow-sm);
+
+  &::before {
+    content: '▼';
+    position: absolute;
+    top: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 8px;
+    color: var(--neon-primary);
+    animation: scroll-bounce 1.5s step-end infinite;
+  }
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+  50% { transform: translateX(-50%) translateY(8px); opacity: 0.3; }
+}
+
+// ===== Responsive =====
+@include tablet {
+  .hero-content { grid-template-columns: 1fr; gap: var(--space-10); }
+  .hero-text { text-align: center; align-items: center; }
+  .hero-bio {
+    max-width: 60ch;
+    border-left: none;
+    border-top: 2px solid var(--neon-primary);
+    padding-left: 0;
+    padding-top: var(--space-4);
+    box-shadow: 0 -2px 10px rgba(0, 255, 136, 0.3);
+  }
+  .hero-cta { justify-content: center; }
+}
+
+@include mobile {
+  .hero { padding-top: calc(var(--touch-target) + var(--space-12)); padding-bottom: var(--space-16); }
+  .hero-content { gap: var(--space-8); }
+  .hero-bio { max-width: 100%; font-size: var(--text-sm); }
+  .hero-cta { flex-direction: column; width: 100%; }
+  .cta-button { width: 100%; }
+  .tech-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-scroll { display: none; }
+}
+
+@include small-mobile {
+  .tech-grid { grid-template-columns: 1fr; }
+}

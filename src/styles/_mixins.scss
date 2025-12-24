@@ -1,0 +1,405 @@
+// ==============================
+// SCSS MIXINS - Portfolio
+// Padrões reutilizáveis otimizados
+// ==============================
+
+@use 'breakpoints' as *;
+@forward 'breakpoints';
+
+// ===== LAYOUT UTILITIES =====
+
+/// Centralização flex
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/// Coluna flex com gap
+@mixin flex-column($gap: var(--space-4)) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+/// Flex between (header patterns)
+@mixin flex-between($align: center) {
+  display: flex;
+  justify-content: space-between;
+  align-items: $align;
+}
+
+/// Touch target acessível
+@mixin touch-target {
+  min-height: var(--touch-target);
+  display: flex;
+  align-items: center;
+}
+
+// ===== TEXTO TERMINAL =====
+
+/// Base de texto terminal
+@mixin terminal-text($spacing: 0.1em, $transform: uppercase) {
+  font-family: var(--font-primary);
+  text-transform: $transform;
+  letter-spacing: $spacing;
+}
+
+/// Efeito neon em texto
+@mixin neon-text($color, $intensity: 10px) {
+  color: $color;
+  text-shadow: 0 0 $intensity $color;
+}
+
+/// Neon text com múltiplas camadas (mais intenso)
+@mixin neon-text-strong($color) {
+  color: $color;
+  text-shadow: 0 0 10px $color, 0 0 20px $color, 0 0 40px rgba($color, 0.5);
+}
+
+/// Label de seção (usado em projects, experience, education, hero)
+@mixin section-label {
+  @include terminal-text(0.2em);
+  font-size: var(--text-sm);
+  color: var(--neon-primary);
+  text-shadow: 0 0 10px var(--neon-primary);
+}
+
+/// Título de seção
+@mixin section-title {
+  font-size: var(--text-4xl);
+  color: var(--color-text-primary);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+// ===== CARDS E PAINÉIS =====
+
+/// Card tático base
+@mixin tactical-card {
+  background: var(--color-bg-card);
+  border: var(--crt-border-dim);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+/// Hover com glow
+@mixin hover-glow($color: var(--neon-primary), $glow: var(--crt-glow-sm)) {
+  &:hover {
+    border-color: $color;
+    box-shadow: $glow;
+  }
+}
+
+/// Card tático completo com hover
+@mixin tactical-card-interactive($hover-color: var(--neon-primary)) {
+  @include tactical-card;
+  @include hover-glow($hover-color);
+}
+
+// ===== BADGES E PILLS =====
+
+/// Badge neon (usado em meta-badge, tech-pill, project-badge, etc)
+@mixin neon-badge($color, $glow-intensity: 5px) {
+  @include terminal-text(0.1em);
+  font-size: var(--text-xs);
+  padding: var(--space-1) var(--space-2);
+  background: transparent;
+  border: 1px solid $color;
+  border-radius: var(--radius-sm);
+  color: $color;
+  text-shadow: 0 0 $glow-intensity $color;
+}
+
+/// Badge location (sem glow)
+@mixin badge-muted {
+  @include terminal-text(0.1em);
+  font-size: var(--text-xs);
+  padding: var(--space-1) var(--space-2);
+  background: transparent;
+  border: 1px solid var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+}
+
+// ===== OVERLAYS =====
+
+/// Overlay base (usado em mobile-menu, menu-overlay)
+@mixin overlay-base($bg: rgba(5, 5, 8, 0.98)) {
+  position: fixed;
+  inset: 0;
+  background: $bg;
+  z-index: var(--z-overlay);
+  @include flex-column;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-smooth), visibility var(--transition-smooth);
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/// Scanlines overlay (efeito CRT)
+@mixin crt-scanlines($color: rgba(0, 255, 136, 0.02)) {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    $color 2px,
+    $color 4px
+  );
+  pointer-events: none;
+}
+
+// ===== TIMELINE (Experience + Education) =====
+
+/// Container timeline
+@mixin timeline-container {
+  position: relative;
+  max-width: 800px;
+}
+
+/// Item timeline base
+@mixin timeline-item-base {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: var(--space-5);
+  padding-bottom: var(--space-8);
+
+  &--last {
+    padding-bottom: 0;
+  }
+}
+
+/// Marker timeline (coluna esquerda)
+@mixin timeline-marker {
+  @include flex-column(0);
+  align-items: center;
+  position: relative;
+}
+
+/// Dot timeline
+@mixin timeline-dot($color: var(--neon-primary)) {
+  width: 12px;
+  height: 12px;
+  background: var(--color-bg-primary);
+  border: 2px solid $color;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  z-index: 1;
+  box-shadow: 0 0 10px $color;
+  transition: all var(--transition-fast);
+}
+
+/// Linha timeline
+@mixin timeline-line($color: var(--neon-primary)) {
+  width: 2px;
+  flex: 1;
+  background: $color;
+  margin-top: var(--space-2);
+  box-shadow: 0 0 5px $color;
+  opacity: 0.5;
+}
+
+/// Content timeline
+@mixin timeline-content($hover-color: var(--neon-primary)) {
+  @include tactical-card;
+  padding: var(--space-5);
+  cursor: pointer;
+
+  &:hover {
+    border-color: $hover-color;
+    box-shadow: 0 0 10px rgba($hover-color, 0.3);
+  }
+}
+
+/// Header info (company/institution)
+@mixin timeline-entity-info {
+  @include flex-column(var(--space-1));
+}
+
+/// Role/Degree title
+@mixin timeline-role {
+  @include terminal-text(0.05em);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/// Company/Institution name
+@mixin timeline-secondary-text {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/// Logo
+@mixin entity-logo($size: 44px) {
+  width: $size;
+  height: $size;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+/// Toggle button
+@mixin timeline-toggle($color: var(--neon-cyan), $hover-color: var(--neon-primary)) {
+  @include flex-center;
+  @include terminal-text(0.1em);
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  color: $color;
+  cursor: pointer;
+  min-height: var(--touch-target);
+  padding: var(--space-2);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  text-shadow: 0 0 5px $color;
+
+  &:hover {
+    color: $hover-color;
+    border-color: $hover-color;
+    box-shadow: 0 0 10px rgba($hover-color, 0.3);
+    text-shadow: 0 0 10px $hover-color;
+  }
+}
+
+/// Details section
+@mixin timeline-details {
+  margin-top: var(--space-5);
+  padding-top: var(--space-5);
+  border-top: var(--crt-border-dim);
+  animation: slideDown 0.2s steps(4);
+}
+
+/// Highlights list
+@mixin highlights-list {
+  @include flex-column(var(--space-2));
+}
+
+/// Highlight item
+@mixin highlight-item($bullet-color: var(--neon-primary)) {
+  display: flex;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+}
+
+/// Highlight bullet
+@mixin highlight-bullet($color: var(--neon-primary)) {
+  color: $color;
+  flex-shrink: 0;
+  text-shadow: 0 0 5px $color;
+}
+
+// ===== BOTÕES =====
+
+/// Botão CTA base
+@mixin cta-button($color: var(--neon-primary)) {
+  @include flex-center;
+  @include terminal-text(0.15em);
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  min-height: var(--touch-target);
+  background: var(--color-bg-card);
+  border: var(--crt-border);
+  border-radius: var(--radius-sm);
+  color: $color;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-shadow: 0 0 5px $color;
+  box-shadow: var(--crt-glow-sm);
+  transition: all var(--transition-fast);
+
+  &:hover {
+    background: $color;
+    color: var(--color-bg-primary);
+    text-shadow: none;
+    animation: glitch-box 0.2s ease-in-out;
+  }
+}
+
+/// Botão ícone (carousel, toggle, etc)
+@mixin icon-button($size: var(--touch-target)) {
+  @include flex-center;
+  width: $size;
+  height: $size;
+  background: transparent;
+  border: var(--crt-border);
+  border-radius: var(--radius-sm);
+  color: var(--neon-primary);
+  cursor: pointer;
+  box-shadow: var(--crt-glow-sm);
+  transition: all var(--transition-fast);
+
+  &:hover:not(:disabled) {
+    background: var(--neon-primary);
+    color: var(--color-bg-primary);
+    animation: glitch-box 0.15s ease-in-out;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+}
+
+// ===== ÍCONES =====
+
+/// Tamanho de ícone
+@mixin icon-size($size: 16px) {
+  width: $size;
+  height: $size;
+  flex-shrink: 0;
+}
+
+/// SVG dentro de container
+@mixin icon-svg($size: 100%) {
+  svg {
+    width: $size;
+    height: $size;
+  }
+}
+
+// ===== RESPONSIVO (via breakpoints) =====
+
+/// Esconder em mobile
+@mixin hide-mobile {
+  @include mobile {
+    display: none;
+  }
+}
+
+/// Mostrar apenas em mobile
+@mixin show-mobile {
+  display: none;
+  @include mobile {
+    display: flex;
+  }
+}
+
+// ===== ANIMAÇÕES COMUNS =====
+
+/// Glitch hover
+@mixin glitch-on-hover($duration: 0.15s) {
+  &:hover {
+    animation: glitch $duration ease-in-out;
+  }
+}
+
+/// Glitch box hover
+@mixin glitch-box-on-hover($duration: 0.2s) {
+  &:hover {
+    animation: glitch-box $duration ease-in-out;
+  }
+}
