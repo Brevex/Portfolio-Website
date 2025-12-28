@@ -9,29 +9,60 @@
 
 // ===== CSS Custom Properties =====
 :root {
-  // Colors - Terminal Dark
-  --color-bg-primary: #050508;
-  --color-bg-secondary: #0a0a0f;
-  --color-bg-tertiary: #0f0f15;
-  --color-bg-card: #08080c;
+  // ==============================
+  // REFINED PALETTE - CRT TERMINAL
+  // Retro Aesthetic + Professional Polish
+  // ==============================
 
-  // Neon Phosphor Colors
-  --neon-primary: #00ff88;
+  // === BACKGROUNDS ===
+  // Green undertone for analogous harmony with primary color
+  --color-bg-primary: #030706;    // Deep black with subtle green undertone
+  --color-bg-secondary: #050a09;  // Elevated surface
+  --color-bg-tertiary: #081210;   // Cards and elevated elements
+  --color-bg-card: #040807;       // Card surfaces
+
+  // === PRIMARY COLOR: TERMINAL GREEN ===
+  // Reduced halation: S:100% L:55% (was L:50%)
+  --neon-primary: #1aff8f;        // Main interactive elements
+  --neon-primary-bright: #00ff88; // Reserved for glows and shadows only
+  --neon-primary-dim: #0d7a47;    // Decorative borders (S:85% L:27%)
+  --neon-primary-muted: #166644;  // Tertiary elements (S:70% L:25%)
+
+  // === SECONDARY COLOR: AMBER ===
+  // Increased presence for highlights and secondary CTAs
+  --neon-amber: #ffa500;          // Primary accent (purer orange)
+  --neon-amber-dim: #b37400;      // Inactive states
+  --neon-amber-bright: #ffcc00;   // Hover state (shift toward yellow)
+
+  // === ACCENT COLOR: CYAN ===
+  // Reserved for interactive elements and links
+  --neon-cyan: #00e5e5;           // Reduced saturation for comfort
+  --neon-cyan-dim: #007a7a;       // Visited/secondary links
+  --neon-cyan-bright: #00ffff;    // Hover state
+
+  // Legacy colors (kept for compatibility)
   --neon-secondary: #ff0055;
-  --neon-amber: #ffaa00;
-  --neon-cyan: #00ffff;
   --neon-purple: #ff00ff;
 
-  // Text Colors
-  --color-text-primary: #e0ffe0;
-  --color-text-secondary: #80c080;
-  --color-text-muted: #406040;
+  // === TEXT COLORS ===
+  --color-text-primary: #d6f0d6;  // Slightly desaturated pale green
+  --color-text-secondary: #8fb38f; // Secondary text (~8:1 contrast)
+  --color-text-muted: #5a805a;    // FIXED: Now passes WCAG AA (~4.6:1)
 
-  // CRT Effects
-  --crt-glow: 0 0 10px var(--neon-primary), 0 0 20px var(--neon-primary), 0 0 40px rgba(0, 255, 136, 0.3);
-  --crt-glow-sm: 0 0 5px var(--neon-primary), 0 0 10px rgba(0, 255, 136, 0.4);
-  --crt-border: 1px solid var(--neon-primary);
-  --crt-border-dim: 1px solid rgba(0, 255, 136, 0.3);
+  // === HIERARCHICAL BORDER SYSTEM ===
+  // Clear distinction between decorative and interactive
+  --border-decorative: 1px solid rgba(13, 122, 71, 0.4);  // Passive elements
+  --border-interactive: 1px solid var(--neon-primary);    // Actionable elements
+  --border-focus: 2px solid var(--neon-cyan);             // Focus/active state
+
+  // === CRT EFFECTS (Controlled Intensity) ===
+  --crt-glow: 0 0 8px var(--neon-primary-bright), 0 0 16px rgba(0, 255, 136, 0.25);
+  --crt-glow-sm: 0 0 4px var(--neon-primary-bright), 0 0 8px rgba(0, 255, 136, 0.2);
+  --crt-glow-amber: 0 0 8px var(--neon-amber), 0 0 16px rgba(255, 165, 0, 0.25);
+
+  // Legacy borders (updated to use new system)
+  --crt-border: var(--border-interactive);
+  --crt-border-dim: var(--border-decorative);
 
   // Typography
   --font-mono: 'Fira Code', 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
@@ -168,8 +199,8 @@ a {
   color: var(--neon-cyan);
   text-decoration: none;
   transition: color var(--transition-fast);
-  text-shadow: 0 0 5px currentColor;
-  &:hover { color: var(--neon-primary); animation: glitch 0.3s ease-in-out; }
+  text-shadow: 0 0 4px currentColor;
+  &:hover { color: var(--neon-cyan-bright); text-shadow: 0 0 8px currentColor; }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -179,7 +210,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-text-primary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  text-shadow: 0 0 10px var(--neon-primary), 0 0 20px rgba(0, 255, 136, 0.5);
+  text-shadow: 0 0 8px var(--neon-primary-bright), 0 0 16px rgba(26, 255, 143, 0.3);
 }
 
 img {
@@ -218,12 +249,12 @@ ul, ol { list-style: none; }
 .sr-only { @extend %sr-only; }
 
 .neon-green { @include neon-text-strong(var(--neon-primary)); }
-.neon-amber { @include neon-text(var(--neon-amber)); text-shadow: 0 0 10px var(--neon-amber), 0 0 20px rgba(255, 170, 0, 0.5); }
+.neon-amber { @include neon-text(var(--neon-amber)); text-shadow: var(--crt-glow-amber); }
 
 .glass {
-  background: rgba(5, 5, 8, 0.95);
+  background: rgba(3, 7, 6, 0.95);
   border: var(--crt-border);
-  box-shadow: var(--crt-glow-sm), inset 0 0 20px rgba(0, 255, 136, 0.05);
+  box-shadow: var(--crt-glow-sm), inset 0 0 20px rgba(26, 255, 143, 0.03);
 }
 
 section { padding-block: var(--section-padding); position: relative; }
