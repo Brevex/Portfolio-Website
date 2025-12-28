@@ -194,15 +194,58 @@
 }
 
 @include mobile {
-  .hero { padding-top: calc(var(--touch-target) + var(--space-12)); padding-bottom: var(--space-16); }
-  .hero-content { gap: var(--space-8); }
-  .hero-bio { max-width: 100%; font-size: var(--text-sm); }
-  .hero-cta { flex-direction: column; width: 100%; }
-  .cta-button { width: 100%; }
-  .tech-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero { padding-top: calc(var(--touch-target) + var(--space-8)); padding-bottom: var(--space-12); }
+  .hero-content { gap: var(--space-6); }
+  
+  // Espaçamento tipográfico compacto
+  .hero-greeting { margin-bottom: var(--space-1); }
+  .hero-name { margin-bottom: var(--space-1); }
+  .hero-title { margin-bottom: var(--space-2); }
+  .hero-bio { 
+    max-width: 100%; 
+    font-size: var(--text-sm); 
+    padding-top: var(--space-2);
+    margin-bottom: var(--space-2);
+  }
+  
+  // CTA Buttons lado a lado
+  .hero-cta { 
+    flex-direction: row; 
+    width: 100%;
+    gap: var(--space-3);
+  }
+  .cta-button { 
+    flex: 1;
+    min-width: 0;
+    padding-inline: var(--space-3);
+  }
+  
+  // Tech Stack compactado
+  .hero-tech { padding: var(--space-4); }
+  .tech-grid { 
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2);
+  }
+  .tech-item {
+    padding: var(--space-2) var(--space-3);
+    min-height: 44px;
+  }
+  .tech-name { font-size: var(--text-xs); }
+  .tech-icon { @include icon-size(16px); }
+  
   .hero-scroll { display: none; }
 }
 
+
 @include small-mobile {
-  .tech-grid { grid-template-columns: 1fr; }
+  // Mantém 2 colunas mas ainda mais compacto
+  .tech-grid { gap: var(--space-1); }
+  .tech-item { 
+    padding: var(--space-1) var(--space-2);
+    min-height: 40px;
+  }
+  .tech-name { font-size: 0.65rem; }
+  .tech-icon { @include icon-size(14px); }
+  .tech-item::before { font-size: 0.6rem; }
 }
+
