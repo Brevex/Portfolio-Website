@@ -33,7 +33,7 @@
       "NATAL": "Natal, RN"
     },
     "DESCRIPTIONS": {
-      "EXP_1": "Developed and integrated AI models for detecting and classifying behavioral patterns in complex environments into a web system focused on providing ready-to-use AI models for various scientific research laboratories.",
+      "EXP_1": "Developed and integrated AI models for detecting and classifying behavioral patterns in complex environments into a web system focused on making AI models available to different scientific research laboratories.",
       "EXP_2": "In a partnership between Instituto Metrópole Digital (IMD) and Riachuelo Group, I worked on developing a sophisticated real-time fault detection system using AI and computer vision, applying cutting-edge technologies to the field of industrial automation in the textile sector.",
       "EXP_3": "In a partnership between Instituto Metrópole Digital (IMD) and DELL Technologies, I rebuilt critical applications for Dell's operations, focusing on performance and security for internal processes of development teams across multiple countries."
     },
@@ -59,8 +59,8 @@
       "PROJ_3": "Smart Parking System"
     },
     "DESCRIPTIONS": {
-      "PROJ_1": "A command-line tool written in Rust for data analysis and recovery, specialized in images even after formatting. Currently supports Linux only.",
-      "PROJ_2": "Chatbot specialized in paint recommendations and generating simulation images of house painting using Google AI.",
+      "PROJ_1": "Command line tool developed in Rust specialized in recovering images deleted from the system even after formatting.",
+      "PROJ_2": "Chatbot integrated with Google AI to recommend paints and generate images for simulating painting in houses.",
       "PROJ_3": "Parking lot management system with ESP32 and AI for vehicle license plate detection."
     }
   },

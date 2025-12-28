@@ -7,10 +7,10 @@
   },
   "HERO": {
     "GREETING": "Olá, eu sou",
-    "TITLE": "Software Developer",
+    "TITLE": "Desenvolvedor",
     "TITLE_ALT": "Viciado em Café",
     "BIO": "Desenvolvedor especializado na integração de IA em sistemas back-end empresariais. Gosto de gatos, desenho e tecnologia.",
-    "TECH_LABEL": "// Tech Stack"
+    "TECH_LABEL": "// Tecnologias"
   },
   "EXPERIENCE": {
     "SECTION_LABEL": "// Trajetória",
@@ -33,7 +33,7 @@
       "NATAL": "Natal, RN"
     },
     "DESCRIPTIONS": {
-      "EXP_1": "Desenvolvi e integrei modelos de IA para detecção e classificação de padrões comportamentais em ambientes complexos a um sistema web focado na disponibilização de modelos prontos de IA para diferentes laboratórios de pesquisa científica.",
+      "EXP_1": "Desenvolvi e integrei modelos de IA para detecção e classificação de padrões comportamentais em ambientes complexos a um sistema web focado na disponibilização de modelos de IA para diferentes laboratórios de pesquisa científica.",
       "EXP_2": "Em uma parceria do Instituto Metrópole Digital (IMD) com o Grupo Riachuelo, atuei no desenvolvimento de um sistema sofisticado de detecção de falhas em tempo real utilizando IA e visão computacional, aplicando tecnologias de ponta para o campo da automação industrial na área têxtil.",
       "EXP_3": "Em uma parceria do Instituto Metrópole Digital (IMD) com a DELL Technologies, atuei reconstruindo aplicações críticas para as operações da Dell, com foco em performance e segurança para processos internos de equipes de desenvolvimento em diversos países."
     },
@@ -42,7 +42,7 @@
       "EXP_1_H2": "Atuei como elo entre os cientistas e os desenvolvedores.",
       "EXP_1_H3": "Atuei com tecnologias em estado da arte para o campo da computação.",
       "EXP_2_H1": "Automatização de processos de detecção de falhas com alta acurácia.",
-      "EXP_2_H2": "Aumento da produtividade dos operários com sistema automatizado.",
+      "EXP_2_H2": "Aumento da produtividade dos colaboradores com sistema automatizado.",
       "EXP_2_H3": "Redução significativa de custos de operação.",
       "EXP_3_H1": "Projeto de escopo global."
     }
@@ -59,8 +59,8 @@
       "PROJ_3": "Smart Parking System"
     },
     "DESCRIPTIONS": {
-      "PROJ_1": "Ferramenta de linha de comando em Rust para análise e recuperação de dados especializado em imagens mesmo após formatação. No momento conta com suporte apenas para linux.",
-      "PROJ_2": "Chatbot especializado na recomendação de tintas e geração de imagens de simulação de pintura em casas com Google AI.",
+      "PROJ_1": "Ferramenta de linha de comando desenvolvida em Rust especializada na recuperação de imagens excluídas do sistema mesmo após formatação.",
+      "PROJ_2": "Chatbot integrado ao Google IA para recomendação de tintas e geração de imagens de simulação de pintura em casas.",
       "PROJ_3": "Sistema de gerenciamento de estacionamentos com ESP32 e IA para detecção de placas de veículos."
     }
   },
