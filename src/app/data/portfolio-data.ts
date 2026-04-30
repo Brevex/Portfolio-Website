@@ -143,7 +143,7 @@ export const EXPERIENCES: readonly Experience[] = [
     roleKey: 'EXPERIENCE.ROLES.BACKEND_DEV',
     type: 'full-time',
     startDate: '2025/12',
-    endDate: undefined,
+    endDate: 'EXPERIENCE.CURRENT',
     location: 'EXPERIENCE.LOCATIONS.REMOTE',
     locationKey: 'EXPERIENCE.LOCATIONS.REMOTE',
     description: 'EXPERIENCE.DESCRIPTIONS.EXP_3',
@@ -161,7 +161,7 @@ export const EXPERIENCES: readonly Experience[] = [
     roleKey: 'EXPERIENCE.ROLES.IA_DEV',
     type: 'full-time',
     startDate: '2025/01',
-    endDate: 'EXPERIENCE.CURRENT',
+    endDate: '2025/12',
     location: 'EXPERIENCE.LOCATIONS.NATAL',
     locationKey: 'EXPERIENCE.LOCATIONS.NATAL',
     description: 'EXPERIENCE.DESCRIPTIONS.EXP_2',
@@ -202,7 +202,7 @@ export const EXPERIENCES: readonly Experience[] = [
       'EXPERIENCE.HIGHLIGHTS.EXP_1_H2',
       'EXPERIENCE.HIGHLIGHTS.EXP_1_H3',
     ],
-    technologies: ['Python', 'PyTorch', 'Java', 'Spring', 'PostgreSQL', 'Docker', 'Git'],
+    technologies: ['Python', 'PyTorch', 'OpenCV', 'YOLO', 'Java', 'Spring', 'PostgreSQL', 'Docker', 'Git'],
   },
 ] as const;
 
